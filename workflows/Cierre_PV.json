@@ -1,0 +1,122 @@
+{
+  "active": false,
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Etiqueta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    },
+    "Etiqueta": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-01T16:14:09.163Z",
+  "id": "lIA6Z16Vdye9okrY",
+  "meta": {
+    "templateId": "VMiAxXa3lCAizGB5f7dVZQSFfg3FtHkdTKvLuupqBls=",
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Cierre_PV",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "c0e2bf87-f889-4000-890b-9572d553f2a9",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        960,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dbb91b65-0496-42aa-b1fd-16a0476fea4f",
+              "name": "response",
+              "value": "=Contexto interno: No digas que pusiste una etiqueta |Brevemente, Preguntale cuanto tiempo tiene pensando en estudiar esta formación.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1380,
+        320
+      ],
+      "id": "d48e896e-2886-4637-bf9b-2f9c2f5b1896",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://www.uchat.com.au/api/subscriber/set-user-field",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"user_ns\": \"{{ $('Execute Workflow Trigger').item.json.user_ns }}\",\n  \"var_ns\": \"f142345v3372391\",\n  \"value\": \"Cierre_PV\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1160,
+        320
+      ],
+      "id": "59a6edf6-016c-484c-ada1-2bf7f653bf5f",
+      "name": "Etiqueta",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "AeLB5dEMXRr8QISG",
+          "name": "uchat_TH"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-12-13T23:39:23.582Z",
+      "updatedAt": "2024-12-13T23:39:23.582Z",
+      "id": "iYIqNjvo2VXg5kHz",
+      "name": "Universidad ISEP"
+    },
+    {
+      "createdAt": "2025-02-20T20:11:19.525Z",
+      "updatedAt": "2025-02-20T20:11:19.525Z",
+      "id": "PeoIz6bFcQwZKWNt",
+      "name": "PRUEBA"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-01T16:14:35.067Z",
+  "versionId": "610cde55-d494-442e-b02e-61026cda4d4e"
+}
