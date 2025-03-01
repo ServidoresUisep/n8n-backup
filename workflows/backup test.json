@@ -1,0 +1,779 @@
+{
+  "active": false,
+  "connections": {
+    "n8n": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "new": {
+      "main": [
+        [
+          {
+            "node": "GitHub Create",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "isDiffOrNew",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "different": {
+      "main": [
+        [
+          {
+            "node": "GitHub Edit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "isDiffOrNew": {
+      "main": [
+        [
+          {
+            "node": "github_status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "github_status": {
+      "main": [
+        [
+          {
+            "node": "same",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "different",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "new",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 12 hours": {
+      "main": [
+        []
+      ]
+    },
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "Set Bitbucket Workspace & Repository",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Variables": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Create": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Edit": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OneAtATime": {
+      "main": [
+        [
+          {
+            "node": "Fin",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GitHub",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "same": {
+      "main": [
+        [
+          {
+            "node": "OneAtATime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Wait Time": {
+      "main": [
+        [
+          {
+            "node": "Wait to Avoid Rate Limiting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Workflows": {
+      "main": [
+        [
+          {
+            "node": "Loop Workflows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Workflows": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Get Existing Worfklow from Bitbucket",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Existing Worfklow from Bitbucket": {
+      "main": [
+        [
+          {
+            "node": "New or Changed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New or Changed?": {
+      "main": [
+        [
+          {
+            "node": "Upload Workflow to Bitbucket",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait to Avoid Rate Limiting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Workflow to Bitbucket": {
+      "main": [
+        [
+          {
+            "node": "Calculate Wait Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait to Avoid Rate Limiting": {
+      "main": [
+        [
+          {
+            "node": "Loop Workflows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Bitbucket Workspace & Repository": {
+      "main": [
+        [
+          {
+            "node": "Get All Workflows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-01T14:13:19.714Z",
+  "id": "KMuV6smVIB1zONMH",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "backup test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8d63a9e7-d2d1-47e9-935f-a5e1843f4b48",
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -1260,
+        880
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": "={{$node[\"Variables\"].json[\"repo\"][\"owner\"]}}",
+        "repository": "={{$node[\"Variables\"].json[\"repo\"][\"name\"]}}",
+        "filePath": "={{$node[\"Variables\"].json[\"repo\"][\"path\"]}}{{$json[\"name\"]}}.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "ab217652-c894-4be2-9fb7-a6ea7b15d377",
+      "name": "GitHub",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        -360,
+        -60
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "credentials": {
+        "githubApi": {
+          "id": "KRtGMJmbi9GpEQdb",
+          "name": "GitHub account"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{$json[\"github_status\"]}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "same"
+            },
+            {
+              "value2": "different",
+              "output": 1
+            },
+            {
+              "value2": "new",
+              "output": 2
+            }
+          ]
+        }
+      },
+      "id": "ef84924e-c7ac-4784-af4c-5ca05e12f1d5",
+      "name": "github_status",
+      "type": "n8n-nodes-base.switch",
+      "position": [
+        180,
+        40
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "9f6f0843-1210-4e3d-a8e6-e788f8fceaca",
+      "name": "same",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        340,
+        -180
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "dac54a29-3def-4204-8a77-145df757ea18",
+      "name": "different",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        340,
+        20
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "772261b9-df98-446b-baff-feef13eab8d0",
+      "name": "new",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        340,
+        200
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": "={{$node[\"Variables\"].json[\"repo\"][\"owner\"]}}",
+        "repository": "={{$node[\"Variables\"].json[\"repo\"][\"name\"]}}",
+        "filePath": "={{$node[\"Variables\"].json[\"repo\"][\"path\"]}}{{$node[\"OneAtATime\"].json[\"name\"]}}.json",
+        "fileContent": "={{$node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
+        "commitMessage": "=[N8N Backup] {{$node[\"OneAtATime\"].json[\"name\"]}}.json ({{$json[\"github_status\"]}})"
+      },
+      "id": "bd6b6086-b48d-4f39-a630-7dffdfc6b08a",
+      "name": "GitHub Edit",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        500,
+        20
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "KRtGMJmbi9GpEQdb",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": "={{$node[\"Variables\"].json[\"repo\"][\"owner\"]}}",
+        "repository": "={{$node[\"Variables\"].json[\"repo\"][\"name\"]}}",
+        "filePath": "={{$node[\"Variables\"].json[\"repo\"][\"path\"]}}{{$node[\"OneAtATime\"].json[\"name\"]}}.json",
+        "fileContent": "={{$node[\"isDiffOrNew\"].json[\"n8n_data_stringy\"]}}",
+        "commitMessage": "=[N8N Backup] {{$node[\"OneAtATime\"].json[\"name\"]}}.json ({{$json[\"github_status\"]}})"
+      },
+      "id": "44a6d8e5-1152-4d51-8947-5a072a2c263c",
+      "name": "GitHub Create",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        500,
+        260
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "KRtGMJmbi9GpEQdb",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 12
+            }
+          ]
+        }
+      },
+      "id": "a6dc0bd8-fd06-4d23-ad93-0ba955dc61da",
+      "name": "Every 12 hours",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -1200,
+        180
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "filters": {},
+        "requestOptions": {}
+      },
+      "id": "71034a24-9d5d-49d6-b7c8-e2e9a6927a92",
+      "name": "n8n",
+      "type": "n8n-nodes-base.n8n",
+      "position": [
+        -820,
+        40
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "n8nApi": {
+          "id": "DrK2xS8ymahELyJe",
+          "name": "backupWordflow"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// File Returned with Content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Get JSON Objects\n  var origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64'));\n  var n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON Objects\n  var orderedOriginal = {}\n  var orderedActual = {}\n  \n  Object.keys(origWorkflow).sort().forEach(function(key) {\n    orderedOriginal[key] = origWorkflow[key];\n  });\n  \n  Object.keys(n8nWorkflow).sort().forEach(function(key) {\n    orderedActual[key] = n8nWorkflow[key];\n  });\n\n  // Determine Difference\n  if ( JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual) ) {\n    $input.all()[0].json.github_status = \"same\";\n    $input.all()[0].json.content_decoded = orderedOriginal;\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.content_decoded = orderedOriginal;\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n// No File Returned / New Workflow\n} else {\n  // Order JSON Object\n  var n8nWorkflow = ($input.all()[1].json);\n  var orderedActual = {}\n  Object.keys(n8nWorkflow).sort().forEach(function(key) {\n    orderedActual[key] = n8nWorkflow[key];\n  });\n  \n  // Proper Formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return Items\nreturn $input.all();"
+      },
+      "id": "e9a4fa70-cf16-48a7-8b6f-ac1de4467ea3",
+      "name": "isDiffOrNew",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        20,
+        40
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "9e03df85-1b12-4b54-926b-4c5f1bceba16",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        -120,
+        40
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "repo.owner",
+              "value": "felixdevback"
+            },
+            {
+              "name": "repo.name",
+              "value": "testWordflow"
+            },
+            {
+              "name": "repo.path",
+              "value": "workflows/"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ea7cd571-6e00-4e5a-b684-b76b3e50089e",
+      "name": "Variables",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -1020,
+        40
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "e282b8df-9d47-4a70-bf68-7ba73e4f388b",
+      "name": "Fin",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d45cd701-2538-42f3-b0ea-227768cee89e",
+      "name": "OneAtATime",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -600,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all input items and ensure we have data\nif ($input.all().length === 0 || !$input.all()[0].headers) {\n  // If no headers available, return default wait time\n  return { waitTime: 1 };\n}\n\n// Check rate limit headers from previous request\nconst headers = $input.all()[0].headers;\nlet waitTime = 1; // Default 1 second\n\n// Check if we have rate limit information (safely)\nconst remaining = parseInt(headers['x-ratelimit-remaining']) || null;\nconst reset = parseInt(headers['x-ratelimit-reset']) || null;\n\n// Only adjust wait time if we have valid rate limit info\nif (remaining !== null && reset !== null) {\n  // If we're running low on requests, calculate a longer wait time\n  if (remaining < 100) {\n    // Calculate seconds until reset\n    const now = Math.floor(Date.now() / 1000);\n    const timeUntilReset = reset - now;\n    \n    // Spread remaining requests over time until reset\n    // Add 10% buffer to be safe\n    waitTime = Math.ceil((timeUntilReset / remaining) * 1.1);\n  } else if (remaining < 500) {\n    // Start slowing down earlier\n    waitTime = 2;\n  }\n}\n\n// Cap maximum wait time at 30 seconds\nwaitTime = Math.min(waitTime, 30);\n\nreturn { waitTime };"
+      },
+      "id": "3af2a604-ae56-4dc7-93c3-316d2a62b0f4",
+      "name": "Calculate Wait Time",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        400,
+        660
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "filters": {},
+        "requestOptions": {}
+      },
+      "id": "7a260cec-e159-448e-bbde-7b4192dc3c9b",
+      "name": "Get All Workflows",
+      "type": "n8n-nodes-base.n8n",
+      "position": [
+        -680,
+        900
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "n8nApi": {
+          "id": "DrK2xS8ymahELyJe",
+          "name": "backupWordflow"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "47ec7ecd-c102-4f82-a407-9f4bb9379f11",
+      "name": "Loop Workflows",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        -460,
+        900
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "url": "=https://api.bitbucket.org/2.0/repositories/{{ $('Set Bitbucket Workspace & Repository').item.json.WorkspaceSlug }}/{{ $('Set Bitbucket Workspace & Repository').item.json.RepositorySlug }}/src/main/{{ $json.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase() }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "id": "ebea0e63-85ed-49e7-8c06-986d6ab872ea",
+      "name": "Get Existing Worfklow from Bitbucket",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        -220,
+        900
+      ],
+      "retryOnFail": false,
+      "typeVersion": 4.2,
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "jDF9ZDYXCURlKRCX",
+          "name": "bitbucket"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": false,
+            "typeValidation": "strict"
+          },
+          "combinator": "or",
+          "conditions": [
+            {
+              "id": "2d5da90e-0f1d-436b-84d4-d82deaaa4b58",
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              },
+              "leftValue": "={{ $json.error.status }}",
+              "rightValue": 404
+            },
+            {
+              "id": "b7b9a48d-8954-4cc4-bf7a-ab30439ad930",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              },
+              "leftValue": "={{ $('Get Existing Worfklow from Bitbucket').item.json.data }}",
+              "rightValue": "={{ JSON.stringify($('Loop Workflows').item.json, null, 2) }}"
+            }
+          ]
+        },
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "id": "2e65b635-ffa7-4125-99f7-2a9402ec0aca",
+      "name": "New or Changed?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        -20,
+        900
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.bitbucket.org/2.0/repositories/{{ $('Set Bitbucket Workspace & Repository').item.json.WorkspaceSlug }}/{{ $('Set Bitbucket Workspace & Repository').item.json.RepositorySlug }}/src",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "message",
+              "value": "={{ $('Loop Workflows').item.json.name + ' [' + $now.format('yyyy-MM-dd HH:mm:ss') +']' }}"
+            },
+            {
+              "name": "={{ $('Loop Workflows').item.json.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase() }}",
+              "value": "={{ JSON.stringify($('Loop Workflows').item.json, null, 2) }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {
+              "maxRedirects": 5
+            }
+          },
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "id": "7e6b99be-61e1-4018-84f5-3080ad8c4a52",
+      "name": "Upload Workflow to Bitbucket",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        200,
+        660
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "iKru720rDTYWScpq",
+          "name": "Twillio_prod"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ $json.waitTime || 1 }}"
+      },
+      "id": "1b8b3777-b32d-41b0-97da-1462bb940446",
+      "name": "Wait to Avoid Rate Limiting",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        620,
+        900
+      ],
+      "webhookId": "793d7525-d166-4487-a71f-d48da7c66662",
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "37f2ddba-188d-4bc1-98b3-5c5fa31d2d62",
+              "name": "WorkspaceSlug",
+              "type": "string",
+              "value": "WOR"
+            },
+            {
+              "id": "303f25f0-bba8-4977-8f4f-33961e2e7e8c",
+              "name": "RepositorySlug",
+              "type": "string",
+              "value": "n8n-wordflow"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "30550c26-fedb-4bd2-89cc-5cefdb554f81",
+      "name": "Set Bitbucket Workspace & Repository",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        -940,
+        880
+      ],
+      "typeVersion": 3.4
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-01T19:44:24.217Z",
+  "versionId": "75352336-f03f-465a-a9d5-c04d1f8ea00d"
+}
