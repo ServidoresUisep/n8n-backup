@@ -29,8 +29,8 @@
       ]
     }
   },
-  "createdAt": "2025-03-01T16:27:26.028Z",
-  "id": "CYasctZNugHSiYns",
+  "createdAt": "2025-03-01T16:43:52.303Z",
+  "id": "nKDUYSibYAV2bmhQ",
   "meta": {
     "templateId": "VMiAxXa3lCAizGB5f7dVZQSFfg3FtHkdTKvLuupqBls=",
     "templateCredsSetupCompleted": true
@@ -39,7 +39,7 @@
   "nodes": [
     {
       "parameters": {},
-      "id": "31fcd5d2-a007-4d65-a2eb-102404a634fb",
+      "id": "a35a22aa-8043-4393-b4c1-67a459f77bc4",
       "name": "Execute Workflow Trigger",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "position": [
@@ -67,7 +67,7 @@
         1380,
         320
       ],
-      "id": "afa3e6e1-b610-4e61-bfc9-0d32a1eee578",
+      "id": "ef11d9a1-a979-4d4d-b7e7-fe7110fca098",
       "name": "Edit Fields"
     },
     {
@@ -87,7 +87,7 @@
         1160,
         320
       ],
-      "id": "71d7ecc8-b7d3-4acc-9084-be50bb5af0d9",
+      "id": "0c4cf058-959e-4009-aabf-a8506fb7bdc4",
       "name": "Etiqueta",
       "credentials": {
         "httpHeaderAuth": {
@@ -117,6 +117,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-01T16:27:42.440Z",
-  "versionId": "17520d4a-bfbf-45f0-9c19-316a842c55cb"
+  "updatedAt": "2025-03-01T16:44:12.499Z",
+  "versionId": "61d72793-6e45-4e57-b313-e81fc991ab8b"
 }
