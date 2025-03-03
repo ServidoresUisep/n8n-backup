@@ -101,7 +101,9 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": {
     "node:Schedule Trigger": {
@@ -117,6 +119,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T14:52:10.790Z",
-  "versionId": "fd96220c-c591-423b-9e20-43b8010a70c7"
+  "updatedAt": "2025-03-03T01:57:07.455Z",
+  "versionId": "546971c5-069e-4ea6-afc4-1fd5178428cf"
 }
