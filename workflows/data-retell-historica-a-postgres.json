@@ -3078,7 +3078,9 @@
     ]
   },
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": null,
   "tags": [
@@ -3090,6 +3092,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T14:53:33.713Z",
-  "versionId": "491cd983-3991-482d-840c-f20f8744b63d"
+  "updatedAt": "2025-03-03T02:02:49.229Z",
+  "versionId": "ceea6162-bbf3-4ede-b5bc-81921c032b2d"
 }
