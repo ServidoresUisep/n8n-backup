@@ -1071,7 +1071,9 @@
     ]
   },
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": {
     "node:Schedule Trigger": {
@@ -1093,6 +1095,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T14:53:12.650Z",
-  "versionId": "e83b2fe2-23de-40cb-a904-31b9322aec5c"
+  "updatedAt": "2025-03-03T02:01:08.720Z",
+  "versionId": "27518d97-4189-42d5-a300-ff3717c7988f"
 }
