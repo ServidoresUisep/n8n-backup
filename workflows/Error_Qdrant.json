@@ -96,11 +96,13 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-28T23:02:27.816Z",
-  "versionId": "2a2e1f8b-6def-4c10-aa37-36810c2eae3b"
+  "updatedAt": "2025-03-03T01:37:19.030Z",
+  "versionId": "1c253686-a926-4194-a089-035f18c166e7"
 }
