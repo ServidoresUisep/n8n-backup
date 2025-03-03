@@ -499,7 +499,9 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": null,
   "tags": [
@@ -511,6 +513,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-28T23:05:05.878Z",
-  "versionId": "d123baf2-b986-4dc0-8f10-22e2a865b004"
+  "updatedAt": "2025-03-03T01:43:35.737Z",
+  "versionId": "ae7a9edb-8182-4597-98a8-b964a935b24d"
 }
