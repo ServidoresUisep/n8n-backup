@@ -129,7 +129,8 @@
   "settings": {
     "executionOrder": "v1",
     "timezone": "America/Hermosillo",
-    "callerPolicy": "workflowsFromSameOwner"
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": {
     "node:Schedule Trigger": {
@@ -151,6 +152,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T14:48:53.880Z",
-  "versionId": "a61ee153-c71a-4055-8fd8-2c4737cc0184"
+  "updatedAt": "2025-03-03T01:51:20.719Z",
+  "versionId": "bace7734-4234-40b3-82cf-a58b26c06635"
 }
