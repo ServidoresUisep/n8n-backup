@@ -306,11 +306,13 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-02-28T23:01:51.501Z",
-  "versionId": "2f2b488f-3274-4e10-b5bc-71c5b135f6b6"
+  "updatedAt": "2025-03-03T01:30:06.031Z",
+  "versionId": "c661ca26-5b64-4f30-aebb-1e2e2647b4e2"
 }
