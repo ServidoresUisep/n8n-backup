@@ -1631,7 +1631,8 @@
   "settings": {
     "executionOrder": "v1",
     "timezone": "America/Hermosillo",
-    "callerPolicy": "workflowsFromSameOwner"
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": null,
   "tags": [
@@ -1649,6 +1650,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T14:52:19.712Z",
-  "versionId": "a338afb6-6c15-42a8-9a04-c4582b7f3829"
+  "updatedAt": "2025-03-03T01:57:35.686Z",
+  "versionId": "bf068d37-a0e1-4447-be47-8bbc05aef2f8"
 }
