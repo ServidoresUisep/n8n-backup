@@ -1807,11 +1807,13 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-28T23:02:17.688Z",
-  "versionId": "ec997dcc-a8a0-480d-a7a4-4775e8651ea7"
+  "updatedAt": "2025-03-03T01:35:18.836Z",
+  "versionId": "f5a93601-fd1f-4306-b538-5065dc37ca44"
 }
