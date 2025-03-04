@@ -613,7 +613,7 @@
             {
               "column": "total_calls",
               "condition": ">",
-              "value": "2000"
+              "value": "6000"
             },
             {
               "column": "campaign_group",
@@ -1822,6 +1822,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T02:05:11.626Z",
-  "versionId": "46e992b4-25da-4c9e-98b6-2cf247c166ab"
+  "updatedAt": "2025-03-04T16:13:08.050Z",
+  "versionId": "8c10ede9-6840-4185-af7a-304ca920857d"
 }
