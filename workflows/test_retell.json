@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "HTTP Request2",
             "type": "main",
             "index": 0
           }
@@ -32,8 +32,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        120,
-        200
+        160,
+        120
       ],
       "id": "dd9446fc-ac6d-4b3c-82b1-7d7c7a9824f4",
       "name": "HTTP Request",
@@ -54,7 +54,7 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "=0 8-18 * * *"
+              "expression": "=0 8-18/3 * * *"
             }
           ]
         }
@@ -76,13 +76,13 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\"from_number\": \"+5521923675501\",\n\"to_number\": \"+5511947414271\",\n\"override_agent_id\":\"agent_d2f34fd56bdcf5cbef12d706c2\",\n\"retell_llm_dynamic_variables\":{\"name\":\"maikel guzman\",\n\"campaign_name\":\"Ventas mexico\",\n\"llamada\": \"1\", \n\"id_oddo\":\"833886\",\n\"email_user\":\"maikelguzman130477@gmail.com\",\n\"chatInput\":\"\"}}",
+        "jsonBody": "={\"from_number\": \"+5521923675501\",\n\"to_number\": \"+5511947414271\",\n\"override_agent_id\":\"agent_012ecf451fb4a945a173d95f0f\",\n\"retell_llm_dynamic_variables\":{\"name\":\"maikel guzman\",\n\"campaign_name\":\"Ventas mexico\",\n\"llamada\": \"1\", \n\"id_oddo\":\"833886\",\n\"email_user\":\"maikelguzman130477@gmail.com\",\n\"chatInput\":\"\"}}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        100,
+        160,
         -100
       ],
       "id": "95c1dabc-784e-4845-ac3a-839b2640e47f",
@@ -119,6 +119,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T01:57:07.455Z",
-  "versionId": "546971c5-069e-4ea6-afc4-1fd5178428cf"
+  "updatedAt": "2025-03-04T17:16:56.134Z",
+  "versionId": "d68f1395-154e-429d-a6e4-12545b1b3f83"
 }
