@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "n8n": {
       "main": [
@@ -337,7 +337,9 @@
     },
     {
       "parameters": {
-        "filters": {},
+        "filters": {
+          "activeWorkflows": true
+        },
         "requestOptions": {}
       },
       "id": "71034a24-9d5d-49d6-b7c8-e2e9a6927a92",
@@ -357,7 +359,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// File Returned with Content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Get JSON Objects\n  var origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64'));\n  var n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON Objects\n  var orderedOriginal = {}\n  var orderedActual = {}\n  \n  Object.keys(origWorkflow).sort().forEach(function(key) {\n    orderedOriginal[key] = origWorkflow[key];\n  });\n  \n  Object.keys(n8nWorkflow).sort().forEach(function(key) {\n    orderedActual[key] = n8nWorkflow[key];\n  });\n\n  // Determine Difference\n  if ( JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual) ) {\n    $input.all()[0].json.github_status = \"same\";\n    $input.all()[0].json.content_decoded = orderedOriginal;\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.content_decoded = orderedOriginal;\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n// No File Returned / New Workflow\n} else {\n  // Order JSON Object\n  var n8nWorkflow = ($input.all()[1].json);\n  var orderedActual = {}\n  Object.keys(n8nWorkflow).sort().forEach(function(key) {\n    orderedActual[key] = n8nWorkflow[key];\n  });\n  \n  // Proper Formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return Items\nreturn $input.all();"
+        "jsCode": "// // File Returned with Content\n// if (Object.keys($input.all()[0].json).includes(\"content\")) {\n//   // Get JSON Objects\n//   var origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64'));\n//   var n8nWorkflow = $input.all()[1].json;\n  \n//   // Order JSON Objects\n//   var orderedOriginal = {}\n//   var orderedActual = {}\n  \n//   Object.keys(origWorkflow).sort().forEach(function(key) {\n//     orderedOriginal[key] = origWorkflow[key];\n//   });\n  \n//   Object.keys(n8nWorkflow).sort().forEach(function(key) {\n//     orderedActual[key] = n8nWorkflow[key];\n//   });\n\n//   // Determine Difference\n//   if ( JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual) ) {\n//     $input.all()[0].json.github_status = \"same\";\n//     $input.all()[0].json.content_decoded = orderedOriginal;\n//   } else {\n//     $input.all()[0].json.github_status = \"different\";\n//     $input.all()[0].json.content_decoded = orderedOriginal;\n//     $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n//   }\n// // No File Returned / New Workflow\n// } else {\n//   // Order JSON Object\n//   var n8nWorkflow = ($input.all()[1].json);\n//   var orderedActual = {}\n//   Object.keys(n8nWorkflow).sort().forEach(function(key) {\n//     orderedActual[key] = n8nWorkflow[key];\n//   });\n  \n//   // Proper Formatting\n//   $input.all()[0].json.github_status = \"new\";\n//   $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n// }\n\n// // Return Items\n// return $input.all();\n\n// Función para normalizar nombres (eliminar sufijos como \"_copy\")\nfunction normalizeName(name) {\n  return name.replace(/_copy$/, ''); // Elimina \"_copy\" al final del nombre\n}\n\n// Verificar si el archivo tiene contenido\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Get JSON Objects\n  var origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64'));\n  var n8nWorkflow = $input.all()[1].json;\n\n  // Normalizar nombres de los workflows\n  var origWorkflowName = normalizeName(origWorkflow.name || '');\n  var n8nWorkflowName = normalizeName(n8nWorkflow.name || '');\n\n  // Si los nombres normalizados son diferentes, marcar como \"different\"\n  if (origWorkflowName !== n8nWorkflowName) {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.content_decoded = origWorkflow;\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(n8nWorkflow, null, 2);\n  } else {\n    // Si los nombres son iguales, comparar el contenido\n    var orderedOriginal = {};\n    var orderedActual = {};\n\n    Object.keys(origWorkflow).sort().forEach(function (key) {\n      orderedOriginal[key] = origWorkflow[key];\n    });\n\n    Object.keys(n8nWorkflow).sort().forEach(function (key) {\n      orderedActual[key] = n8nWorkflow[key];\n    });\n\n    // Determinar diferencia en el contenido\n    if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n      $input.all()[0].json.github_status = \"same\";\n      $input.all()[0].json.content_decoded = orderedOriginal;\n    } else {\n      $input.all()[0].json.github_status = \"different\";\n      $input.all()[0].json.content_decoded = orderedOriginal;\n      $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n    }\n  }\n} else {\n  // No File Returned / New Workflow\n  var n8nWorkflow = $input.all()[1].json;\n  var orderedActual = {};\n  Object.keys(n8nWorkflow).sort().forEach(function (key) {\n    orderedActual[key] = n8nWorkflow[key];\n  });\n\n  // Proper Formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return Items\nreturn $input.all();"
       },
       "id": "e9a4fa70-cf16-48a7-8b6f-ac1de4467ea3",
       "name": "isDiffOrNew",
@@ -440,6 +442,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T01:27:42.134Z",
-  "versionId": "feca2d77-8683-41c2-9ab3-08474f2cc994"
+  "updatedAt": "2025-03-03T14:49:28.844Z",
+  "versionId": "9cb151ed-51ed-43c9-ac1c-71b237b0f0ea"
 }
