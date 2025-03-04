@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Schedule Trigger": {
       "main": [
@@ -41,7 +41,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "UPDATE calloutbound \nSET active =  false\nWHERE\n  calloutbound.campaign_name LIKE'%Cobranzas%' and \n  calloutbound.attempts_counter =2",
+        "query": "UPDATE calloutbound \nSET active =  false\nWHERE\n  calloutbound.campaign_name LIKE'%Cobranzas%' and \n  calloutbound.attempts_counter =5",
         "options": {}
       },
       "type": "n8n-nodes-base.postgres",
@@ -78,6 +78,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T14:54:23.957Z",
-  "versionId": "d9406bd5-991f-48cf-aa75-5445102c08ff"
+  "updatedAt": "2025-03-04T18:46:04.605Z",
+  "versionId": "25ed0cf5-bc61-4354-8ea2-23252c05348b"
 }
