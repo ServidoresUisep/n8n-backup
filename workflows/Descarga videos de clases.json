@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -79,13 +79,7 @@
     },
     "Limit": {
       "main": [
-        [
-          {
-            "node": "Microsoft OneDrive1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "HTTP Request2": {
@@ -122,7 +116,13 @@
     },
     "Odoo1": {
       "main": [
-        []
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Merge1": {
@@ -159,6 +159,18 @@
             "node": "Merge1",
             "type": "main",
             "index": 1
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Microsoft OneDrive1",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -207,8 +219,8 @@
       "type": "n8n-nodes-base.microsoftOneDrive",
       "typeVersion": 1,
       "position": [
-        760,
-        520
+        800,
+        540
       ],
       "credentials": {
         "microsoftOneDriveOAuth2Api": {
@@ -282,8 +294,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        920,
-        620
+        960,
+        660
       ]
     },
     {
@@ -379,8 +391,8 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        580,
-        520
+        380,
+        960
       ]
     },
     {
@@ -531,7 +543,8 @@
           "id": "19",
           "name": "Odoo APP 16"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -552,7 +565,7 @@
             {
               "id": "583754a8-0419-4995-862c-c63c59f886f3",
               "name": "formated",
-              "value": "={{ $json.title.match(/(?<=- )(.*?)(?=-\\d{8}_\\d{6}-)/)[0]}}",
+              "value": "={{ $json.title.match(/(?:\\. )([^.-]+)-\\d{8}_\\d{6}/)[1] }}",
               "type": "string"
             }
           ]
@@ -702,6 +715,19 @@
           "name": "Odoo APP 16"
         }
       }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        620,
+        480
+      ],
+      "id": "232acc81-54b2-48f5-86b4-48fc30c2a26d",
+      "name": "Loop Over Items"
     }
   ],
   "pinData": {},
@@ -715,8 +741,8 @@
   },
   "staticData": {
     "node:Microsoft OneDrive Trigger": {
-      "LastLink": "https://graph.microsoft.com/v1.0/me/drive/root/delta?token=NDslMjM0OyUyMzE7Mzs3NTEzOWFhYS04ODgzLTQ5ZDEtYWU4My04YzliZDdkM2FiM2Y7NjM4NzY1NjI0Njc1OTMwMDAwOzUxMDc4MDMyNDslMjM7JTIzOyUyMzA7JTIz",
-      "lastTimeChecked": "2025-03-03T01:34:27.696Z"
+      "LastLink": "https://graph.microsoft.com/v1.0/me/drive/root/delta?token=NDslMjM0OyUyMzE7Mzs3NTEzOWFhYS04ODgzLTQ5ZDEtYWU4My04YzliZDdkM2FiM2Y7NjM4NzY2Mjc3OTExNTAwMDAwOzUxMTA0MDgyNjslMjM7JTIzOyUyMzA7JTIz",
+      "lastTimeChecked": "2025-03-03T19:43:10.954Z"
     }
   },
   "tags": [
@@ -728,6 +754,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T01:34:27.664Z",
-  "versionId": "8532a533-230d-42f3-afb9-8b1a9ae68454"
+  "updatedAt": "2025-03-03T19:43:10.912Z",
+  "versionId": "49d68ce5-e9ac-406f-87d4-1a30d5c0e7ea"
 }
