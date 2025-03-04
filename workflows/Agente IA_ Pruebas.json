@@ -49,7 +49,7 @@
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "Marielos",
             "type": "main",
             "index": 0
           }
@@ -101,27 +101,9 @@
     },
     "Switch": {
       "main": [
-        [
-          {
-            "node": "Finanzas",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Marielos",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Orientación",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        [],
+        [],
+        []
       ]
     },
     "Answer questions with a vector store1": {
@@ -271,6 +253,33 @@
           }
         ]
       ]
+    },
+    "Orientación": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finanzas": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        []
+      ]
     }
   },
   "createdAt": "2025-02-25T21:22:15.383Z",
@@ -282,13 +291,15 @@
   "nodes": [
     {
       "parameters": {
-        "options": {}
+        "options": {
+          "responseKey": "={{ $json.message.content }}"
+        }
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        1080,
-        1060
+        1040,
+        980
       ],
       "id": "da623bfc-1022-41ff-ac1a-e7cc532d5785",
       "name": "Respond to Webhook"
@@ -438,8 +449,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        40,
-        1140
+        380,
+        980
       ],
       "id": "f632a7e2-dd13-4e2e-a3f3-6e91fee036d4",
       "name": "Webhook",
@@ -672,8 +683,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        260,
-        1140
+        160,
+        1860
       ],
       "id": "39e73d7a-8691-45fa-b876-865b4f4b460f",
       "name": "Switch"
@@ -1018,11 +1029,66 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.7,
       "position": [
-        680,
-        1000
+        600,
+        980
       ],
       "id": "1f2f5ea9-9701-447d-bda0-1a4f66734da4",
       "name": "Marielos"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1340,
+        1680
+      ],
+      "id": "5c576446-f514-49f7-8554-83e43715aa57",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1460,
+        400
+      ],
+      "id": "4878e17e-d914-4c2d-8163-0f7acf96612d",
+      "name": "Respond to Webhook2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://workflow.universidadisep.com/webhook/9cc006c6-24af-43df-9290-2a29fcdb0bdd",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "user",
+              "value": "={{ $('Webhook').item.json.body.user }}"
+            },
+            {
+              "name": "user_ns",
+              "value": "={{ $('Webhook').item.json.body.user_ns }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        900
+      ],
+      "id": "1b07eed3-6b73-4ab9-bce9-b035072830af",
+      "name": "HTTP Request"
     }
   ],
   "pinData": {
@@ -1049,7 +1115,7 @@
             "phone": "+5216674192170",
             "odoo_lead_id": "835323",
             "user_ns": "f152209u227186527",
-            "formacion": "Finanzas"
+            "formacion": ""
           },
           "webhookUrl": "https://workflow.universidadisep.com/webhook/7696cd48-698c-4f50-a667-e2f771c2299a",
           "executionMode": "production"
@@ -1078,6 +1144,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-04T01:18:23.882Z",
-  "versionId": "9d05cc2f-a862-40a6-b3a6-da5296271479"
+  "updatedAt": "2025-03-04T17:50:08.086Z",
+  "versionId": "3235bc33-2099-4d7f-a982-5348ea61427c"
 }
