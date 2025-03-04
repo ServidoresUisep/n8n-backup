@@ -1,7 +1,7 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
-    "Postgres Trigger": {
+    "Schedule Trigger": {
       "main": [
         [
           {
@@ -31,8 +31,8 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.5,
       "position": [
-        1000,
-        300
+        460,
+        120
       ],
       "credentials": {
         "postgres": {
@@ -43,34 +43,23 @@
     },
     {
       "parameters": {
-        "schema": {
-          "__rl": true,
-          "mode": "list",
-          "value": "public"
-        },
-        "tableName": {
-          "__rl": true,
-          "value": "calloutbound_cobranzas",
-          "mode": "list",
-          "cachedResultName": "calloutbound_cobranzas"
-        },
-        "additionalFields": {},
-        "options": {}
-      },
-      "id": "7fe83a78-b4ba-4da7-8b46-1fa09486140a",
-      "name": "Postgres Trigger",
-      "type": "n8n-nodes-base.postgresTrigger",
-      "typeVersion": 1,
-      "position": [
-        700,
-        300
-      ],
-      "credentials": {
-        "postgres": {
-          "id": "hnUS8UxUWHrcQri5",
-          "name": "Postgresql_iallamadas"
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
         }
-      }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        120
+      ],
+      "id": "a3a5e7a3-0d08-4034-8e2b-12795a0116aa",
+      "name": "Schedule Trigger"
     }
   ],
   "pinData": {},
@@ -78,7 +67,11 @@
     "executionOrder": "v1",
     "callerPolicy": "workflowsFromSameOwner"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [
     {
       "createdAt": "2024-12-04T00:40:48.979Z",
@@ -88,6 +81,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T14:47:52.203Z",
-  "versionId": "7ab8cd3c-6b12-436b-a91e-0af99b93f531"
+  "updatedAt": "2025-03-04T18:44:26.011Z",
+  "versionId": "c8c0a94e-d33f-4308-95b1-3098e8ee12b2"
 }
