@@ -589,7 +589,7 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "0 8 * * *"
+              "expression": "0 6 * * *"
             }
           ]
         }
@@ -1377,7 +1377,7 @@
             "date_uploda": "={{ $now }}",
             "reason_for_call": "={{ $json.use }}",
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
-            "maximum_attempts": 3,
+            "maximum_attempts": 5,
             "time_between_calls": 6,
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
@@ -1678,7 +1678,7 @@
             "date_uploda": "={{ $now }}",
             "reason_for_call": "={{ $json.use }}",
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
-            "maximum_attempts": 3,
+            "maximum_attempts": 5,
             "time_between_calls": 6,
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
@@ -2061,7 +2061,7 @@
             "date_uploda": "={{ $now }}",
             "reason_for_call": "={{ $json.use }}",
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
-            "maximum_attempts": 3,
+            "maximum_attempts": 5,
             "time_between_calls": 6,
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
@@ -2425,7 +2425,7 @@
             "date_uploda": "={{ $now }}",
             "reason_for_call": "={{ $json.use }}",
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
-            "maximum_attempts": 3,
+            "maximum_attempts": 5,
             "time_between_calls": 6,
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
@@ -2747,7 +2747,7 @@
             "date_uploda": "={{ $now }}",
             "reason_for_call": "={{ $json.use }}",
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
-            "maximum_attempts": 3,
+            "maximum_attempts": 5,
             "time_between_calls": 6,
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
@@ -3069,7 +3069,7 @@
             "date_uploda": "={{ $now }}",
             "reason_for_call": "={{ $json.use }}",
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
-            "maximum_attempts": 3,
+            "maximum_attempts": 5,
             "time_between_calls": 6,
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
@@ -3520,6 +3520,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T01:49:10.184Z",
-  "versionId": "ffe612dd-3b41-4da6-87a3-843ae9b499b8"
+  "updatedAt": "2025-03-04T18:47:37.718Z",
+  "versionId": "483c8dfa-7ada-47cb-8acd-c33ec0dd2d9c"
 }
