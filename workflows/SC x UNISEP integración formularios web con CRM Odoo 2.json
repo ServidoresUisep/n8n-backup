@@ -431,7 +431,7 @@
             "send_to_call": true,
             "call_eject": true,
             "active": true,
-            "maximum_attempts": 6,
+            "maximum_attempts": 30,
             "time_between_calls": 1,
             "attempts_counter": 0,
             "name": "={{ $('Webhook').item.json.body.name }}",
@@ -443,7 +443,8 @@
             "from_number": "={{ $json.number }}",
             "agent_id": "={{ $('Agente_Brasil').item.json.id_agent }}",
             "formation": "={{ $('Webhook').item.json.body.formacion }}",
-            "email": "={{ $('Webhook').item.json.body.email }}"
+            "email": "={{ $('Webhook').item.json.body.email }}",
+            "round_call": 1
           },
           "matchingColumns": [],
           "schema": [
@@ -647,6 +648,56 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "round_call",
+              "displayName": "round_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -690,7 +741,7 @@
             "send_to_call": true,
             "call_eject": true,
             "active": true,
-            "maximum_attempts": 6,
+            "maximum_attempts": 30,
             "time_between_calls": 1,
             "attempts_counter": 0,
             "name": "={{ $('Webhook').item.json.body.name }}",
@@ -702,7 +753,8 @@
             "from_number": "={{ $json.number }}",
             "agent_id": "={{ $('Postgres1').item.json.id_agent }}",
             "formation": "={{ $('Webhook').item.json.body.formacion }}",
-            "email": "={{ $('Webhook').item.json.body.email }}"
+            "email": "={{ $('Webhook').item.json.body.email }}",
+            "round_call": 1
           },
           "matchingColumns": [],
           "schema": [
@@ -906,6 +958,56 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "round_call",
+              "displayName": "round_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -949,7 +1051,7 @@
             "send_to_call": true,
             "call_eject": true,
             "active": true,
-            "maximum_attempts": 6,
+            "maximum_attempts": 30,
             "time_between_calls": 1,
             "attempts_counter": 0,
             "name": "={{ $('Webhook').item.json.body.name }}",
@@ -961,7 +1063,8 @@
             "from_number": "={{ $json.number }}",
             "agent_id": "={{ $('Postgres').item.json.id_agent }}",
             "formation": "={{ $('Webhook').item.json.body.formacion }}",
-            "email": "={{ $('Webhook').item.json.body.email }}"
+            "email": "={{ $('Webhook').item.json.body.email }}",
+            "round_call": 1
           },
           "matchingColumns": [],
           "schema": [
@@ -1165,6 +1268,56 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "round_call",
+              "displayName": "round_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -1416,7 +1569,7 @@
             "send_to_call": true,
             "call_eject": true,
             "active": true,
-            "maximum_attempts": 6,
+            "maximum_attempts": 30,
             "time_between_calls": 1,
             "attempts_counter": 0,
             "name": "={{ $('Webhook').item.json.body.name }}",
@@ -1428,7 +1581,8 @@
             "from_number": "={{ $('Postgres11').item.json.number }}",
             "agent_id": "={{ $('Agente_pais').item.json.id_agent }}",
             "formation": "={{ $('Webhook').item.json.body.formacion }}",
-            "email": "={{ $('Webhook').item.json.body.email }}"
+            "email": "={{ $('Webhook').item.json.body.email }}",
+            "round_call": 1
           },
           "matchingColumns": [],
           "schema": [
@@ -1632,6 +1786,56 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "round_call",
+              "displayName": "round_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -2173,7 +2377,7 @@
             "send_to_call": true,
             "call_eject": "={{ true }}",
             "active": true,
-            "maximum_attempts": 6,
+            "maximum_attempts": 30,
             "time_between_calls": 1,
             "attempts_counter": 0,
             "name": "={{ $('Webhook').item.json.body.name }}",
@@ -2185,7 +2389,8 @@
             "from_number": "={{ $('Postgres12').item.json.number }}",
             "agent_id": "={{ $('Agente_pais1').item.json.id_agent }}",
             "formation": "={{ $('Webhook').item.json.body.formacion }}",
-            "email": "={{ $('Webhook').item.json.body.email }}"
+            "email": "={{ $('Webhook').item.json.body.email }}",
+            "round_call": 1
           },
           "matchingColumns": [],
           "schema": [
@@ -2389,6 +2594,56 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "round_call",
+              "displayName": "round_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -2622,18 +2877,18 @@
   "tags": [
     {
       "createdAt": "2024-12-19T22:53:31.528Z",
-      "updatedAt": "2024-12-19T22:53:31.528Z",
+      "updatedAt": "2025-03-05T03:18:09.377Z",
       "id": "JeuR9KgbxHoHPzZx",
-      "name": "Dinamic_Number_Display"
+      "name": "A-Dinamic_Number_Display"
     },
     {
       "createdAt": "2024-12-04T00:40:48.979Z",
-      "updatedAt": "2024-12-04T00:40:48.979Z",
+      "updatedAt": "2025-03-05T03:06:16.050Z",
       "id": "Y1BsKfyyH4T8xRCR",
-      "name": "iallamadas"
+      "name": "A-iallamadas"
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T01:47:51.375Z",
-  "versionId": "6c3392e0-5301-4edd-9239-0ab64b034f78"
+  "updatedAt": "2025-03-05T03:52:43.315Z",
+  "versionId": "3f358c5b-a304-42b0-8737-5340918731fa"
 }
