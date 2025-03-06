@@ -495,7 +495,7 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.5,
       "position": [
-        -1320,
+        -1280,
         -140
       ],
       "executeOnce": false,
@@ -516,9 +516,9 @@
         },
         "table": {
           "__rl": true,
-          "value": "calloutbound",
+          "value": "calloutbound_cobranzas",
           "mode": "list",
-          "cachedResultName": "calloutbound"
+          "cachedResultName": "calloutbound_cobranzas"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -536,8 +536,8 @@
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
-            "maximum_attempts": 2,
-            "time_between_calls": 3,
+            "maximum_attempts": 5,
+            "time_between_calls": 6,
             "attempts_counter": 0,
             "email": "={{ $('Odoo').item.json.email }}"
           },
@@ -743,7 +743,48 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
             }
           ],
           "attemptToConvertTypes": false,
@@ -776,9 +817,9 @@
         },
         "table": {
           "__rl": true,
-          "value": "calloutbound",
+          "value": "calloutbound_cobranzas",
           "mode": "list",
-          "cachedResultName": "calloutbound"
+          "cachedResultName": "calloutbound_cobranzas"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -796,8 +837,8 @@
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
-            "maximum_attempts": 2,
-            "time_between_calls": 3,
+            "maximum_attempts": 5,
+            "time_between_calls": 6,
             "attempts_counter": 0,
             "email": "={{ $('Odoo').item.json.email }}"
           },
@@ -984,7 +1025,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "email",
@@ -1002,7 +1044,48 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
             }
           ],
           "attemptToConvertTypes": false,
@@ -1035,9 +1118,9 @@
         },
         "table": {
           "__rl": true,
-          "value": "calloutbound",
+          "value": "calloutbound_cobranzas",
           "mode": "list",
-          "cachedResultName": "calloutbound"
+          "cachedResultName": "calloutbound_cobranzas"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -1056,9 +1139,9 @@
             "campaign_name": "={{ $json.use }}{{ $now.toFormat(\"dd/MM/yyyy\") }}",
             "from_number": "={{ $json.phone_number }}",
             "agent_id": "={{ $json.id_agent }}",
-            "maximum_attempts": 2,
-            "time_between_calls": 3,
-            "attempts_counter": 1,
+            "maximum_attempts": 5,
+            "time_between_calls": 6,
+            "attempts_counter": 0,
             "email": "={{ $('Odoo').item.json.email }}"
           },
           "matchingColumns": [],
@@ -1143,7 +1226,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "reason_for_call",
@@ -1242,7 +1326,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "email",
@@ -1260,9 +1345,52 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "duplicate",
+              "displayName": "duplicate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "boolean",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "resumen_gerencial",
+              "displayName": "resumen_gerencial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "date_last_conversation",
+              "displayName": "date_last_conversation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "call_sid",
+              "displayName": "call_sid",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
         "options": {}
       },
@@ -1329,13 +1457,19 @@
   },
   "tags": [
     {
+      "createdAt": "2025-02-28T02:29:41.371Z",
+      "updatedAt": "2025-02-28T02:29:41.371Z",
+      "id": "QNHsMjTjYVpVyiXd",
+      "name": "cobranzas"
+    },
+    {
       "createdAt": "2024-12-04T00:40:48.979Z",
-      "updatedAt": "2024-12-04T00:40:48.979Z",
+      "updatedAt": "2025-03-05T03:06:16.050Z",
       "id": "Y1BsKfyyH4T8xRCR",
-      "name": "iallamadas"
+      "name": "A-iallamadas"
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T01:53:09.368Z",
-  "versionId": "3b953c0d-8e7a-47bf-90ce-68502cf05cec"
+  "updatedAt": "2025-03-05T03:16:55.638Z",
+  "versionId": "fa747a54-47b1-4281-a743-bcc944e04ac5"
 }
