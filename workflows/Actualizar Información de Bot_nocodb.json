@@ -533,7 +533,7 @@
     {
       "parameters": {
         "method": "DELETE",
-        "url": "https://4d91cd74-12c0-4ebc-a7fe-dd98ea7d71a2.us-east4-0.gcp.cloud.qdrant.io/collections/noco_db",
+        "url": "https://4d91cd74-12c0-4ebc-a7fe-dd98ea7d71a2.us-east4-0.gcp.cloud.qdrant.io/collections/universidad_isep",
         "authentication": "predefinedCredentialType",
         "nodeCredentialType": "qdrantApi",
         "options": {}
@@ -570,7 +570,7 @@
     {
       "parameters": {
         "method": "PUT",
-        "url": "https://4d91cd74-12c0-4ebc-a7fe-dd98ea7d71a2.us-east4-0.gcp.cloud.qdrant.io/collections/noco_db",
+        "url": "https://4d91cd74-12c0-4ebc-a7fe-dd98ea7d71a2.us-east4-0.gcp.cloud.qdrant.io/collections/universidad_isep",
         "authentication": "predefinedCredentialType",
         "nodeCredentialType": "qdrantApi",
         "sendBody": true,
@@ -939,7 +939,7 @@
         "mode": "insert",
         "qdrantCollection": {
           "__rl": true,
-          "value": "=noco_db",
+          "value": "=universidad_isep",
           "mode": "id"
         },
         "options": {
@@ -1088,6 +1088,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-28T23:02:22.061Z",
-  "versionId": "81e6eeec-31e7-4273-9476-6085f7ca0c9b"
+  "updatedAt": "2025-03-06T18:33:17.313Z",
+  "versionId": "73ecf5b4-ffc8-43de-9a4f-291587e616a9"
 }
