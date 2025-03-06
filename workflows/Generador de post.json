@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "RSS Read": {
       "main": [
@@ -215,17 +215,6 @@
         ]
       ]
     },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "NocoDB1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Code6": {
       "main": [
         [
@@ -286,6 +275,422 @@
         [
           {
             "node": "NocoDB3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preliminary Plan": {
+      "main": [
+        [
+          {
+            "node": "Create plan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fix Links": {
+      "main": [
+        []
+      ]
+    },
+    "Create plan": {
+      "main": [
+        [
+          {
+            "node": "NocoDB5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Blog": {
+      "main": [
+        [
+          {
+            "node": "Add internal links",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        []
+      ]
+    },
+    "Previous Posts": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add internal links": {
+      "main": [
+        [
+          {
+            "node": "HTML version",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slug": {
+      "main": [
+        [
+          {
+            "node": "Title",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Title": {
+      "main": [
+        [
+          {
+            "node": "Meta description",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML version": {
+      "main": [
+        [
+          {
+            "node": "Slug",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Research": {
+      "main": [
+        [
+          {
+            "node": "Fix Links",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer questions with a vector store": {
+      "ai_tool": [
+        [
+          {
+            "node": "Create plan",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store1": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions with a vector store1",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions with a vector store1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer questions with a vector store1": {
+      "ai_tool": [
+        [
+          {
+            "node": "Write Blog",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NocoDB4": {
+      "main": [
+        [
+          {
+            "node": "Tema a Procesados1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tema a Procesados1": {
+      "main": [
+        [
+          {
+            "node": "Code10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code10": {
+      "main": [
+        [
+          {
+            "node": "Preliminary Plan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store2": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions with a vector store2",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions with a vector store2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store2",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer questions with a vector store2": {
+      "ai_tool": [
+        [
+          {
+            "node": "Preliminary Plan",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model8": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent promt para generar la imagen2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meta description": {
+      "main": [
+        [
+          {
+            "node": "AI Agent promt para generar la imagen2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent promt para generar la imagen2": {
+      "main": [
+        [
+          {
+            "node": "Promt text=tp=image",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code5": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NocoDB5": {
+      "main": [
+        [
+          {
+            "node": "Write Blog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code11": {
+      "main": [
+        [
+          {
+            "node": "NocoDB6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        []
+      ]
+    },
+    "Promt text=tp=image": {
+      "main": [
+        [
+          {
+            "node": "Request Flux Api",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "TakeURL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request Flux Api": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TakeURL": {
+      "main": [
+        [
+          {
+            "node": "Download IMG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download IMG": {
+      "main": [
+        [
+          {
+            "node": "Code11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "NocoDB4",
             "type": "main",
             "index": 0
           }
@@ -662,7 +1067,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2940,
+        3020,
         -420
       ],
       "id": "86e5ca15-cbe8-4d26-839c-b3d0e1e80398",
@@ -722,26 +1127,6 @@
           "name": "NocoDB_chatbot"
         }
       }
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "seconds",
-              "secondsInterval": 10
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        -80,
-        -420
-      ],
-      "id": "628f60aa-7315-43c3-af5b-80bb2b2e9dda",
-      "name": "Schedule Trigger"
     },
     {
       "parameters": {
@@ -885,21 +1270,1133 @@
     },
     {
       "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Formas parte de un equipo que crea publicaciones de blog de primera clase.\n\nPara cada nuevo proyecto de publicación de blog, se te proporciona una lista de palabras clave e intención de búsqueda.\n\n- Palabras clave: las palabras clave son lo que se pretende que la publicación del blog tenga en cuenta. Están distribuidas por todo el blog y definen el tema de la publicación.\n\n- Intención de búsqueda: la intención de búsqueda reconoce la intención del usuario al buscar la palabra clave que define el tema de la publicación del blog, por lo que hace clic en nuestro blog para satisfacer su búsqueda.\n\n- Palabra clave principal: de las palabras clave, hay una palabra clave conocida como palabra clave principal. La palabra clave principal irá en el título y las primeras oraciones. Es importante que el tema de la publicación del blog esté relacionado con la palabra clave principal para que puedas colocarla en el título y la introducción de forma natural.\n\nDada una lista de palabras clave e intención de búsqueda, tu trabajo es comprender el objetivo de la publicación del blog, identificar el proceso de pensamiento detrás del flujo de la publicación del blog y elaborar un plan preliminar para la publicación.\n\nTu resultado debe:\n\n- Reconocer los puntos de discusión de la publicación del blog.\n\n- Estar en formato de puntos.\n\nDebes asegurarte de que el plan creado satisfaga la intención de búsqueda y gire directamente en torno a las palabras clave proporcionadas.\n\nAl crear el plan, ten en cuenta que todas las palabras clave deben usarse en la publicación final del blog.\n\nEl objetivo final del proyecto es crear una publicación de blog de alta calidad, alto valor y altamente relevante que satisfaga la intención de búsqueda de los usuarios y les brinde todo lo que necesitan saber sobre el tema.\n\nUn nuevo proyecto acaba de llegar a tu escritorio con las siguientes palabras clave e intención de búsqueda:\n\nPalabras clave:\n{{ $json.Tema }}\n\nIntención de búsqueda:\n{{ $json.Tema }}\n\nPalabra clave principal:\n{{ $json.Tema }}\n\nCrea el plan preliminar. {{ $json.Tema }}\n\n-Antes de crear el plan ejecuta la funcion base_conocimiento() y estructura el plan preliminar en base a la informacion de mi empresa "
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -700,
+        240
+      ],
+      "id": "22e2d47b-b3ba-44f2-b318-059e93ec6d6b",
+      "name": "Preliminary Plan",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "23b8e8c4-9191-415a-9661-1b60d413528a",
+              "name": "research",
+              "value": "={{ $json.choices[0].message.content.replaceAll(\"[1]\", \" - source: \" +$json.citations[0]).replaceAll(\"[2]\",\" source:\" +$json.citations[1]).replaceAll(\"[3]\",\" - source: \" +$json.citations[2]).replaceAll(\"[4]\",\" - source: \"+$json.citations[3]).replaceAll(\"[5]\",\" - source: \"+$json.citations[4]).replaceAll(\"[6]\",\" - source: \"+$json.citations[5]).replaceAll(\"[7]\",\" - source: \"+$json.citations[6]).replaceAll(\"[8]\",\" - source: \"+$json.citations[7]).replaceAll(\"[9]\",\" - source: \"+$json.citations[8]).replaceAll(\"[10]\",\" - source: \"+$json.citations[9]) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -560,
+        -220
+      ],
+      "id": "faaa2bb2-a4a1-4d7c-8041-46a3c6d90ea1",
+      "name": "Fix Links"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Formas parte de un equipo que crea publicaciones de blog de primera clase.\n\nPara cada nuevo proyecto de publicación de blog, se te proporciona una lista de palabras clave, una palabra clave principal, intención de búsqueda, resultados de la investigación y un plan preliminar de publicación de blog. Aquí tienes una definición de cada uno de los datos de entrada:\n\n- Palabras clave: son las palabras clave para las que se pretende que la publicación de blog se clasifique en SEO. Deben estar distribuidas de forma inteligente a lo largo de la publicación de blog para ayudar con el SEO.\n\n- Intención de búsqueda: la intención de búsqueda reconoce la intención del usuario cuando busca la palabra clave. Nuestro objetivo es optimizar la publicación de blog para que sea muy relevante y valiosa para el usuario, por lo que la intención de búsqueda debe satisfacerse dentro de la publicación de blog.\n\n- Resultados de la investigación: se trata de investigaciones realizadas a partir de recursos muy reputados en relación con la publicación de blog. Debes utilizar esta investigación de forma inteligente para que tu publicación de blog tenga más reputación.\n\n- Plan preliminar: plan muy básico establecido por tu colega para dar inicio a la publicación de blog.\n\n- Palabra clave principal: de las palabras clave, hay una palabra clave conocida como palabra clave principal. La palabra clave principal es la palabra clave que tiene la mayor importancia para el SEO y, como tal, debe ir en el título y las primeras oraciones de la publicación del blog. Es importante que la publicación del blog sea muy relevante para la palabra clave principal, de modo que pueda ubicarse de manera natural en las secciones de título e introducción.\n\nCon dicha información, debe crear un plan detallado para la publicación del blog.\n\nSu resultado debe:\n\n- Incluir un plan para la publicación del blog.\n\n- Estar en formato de puntos.\n\n- En cada parte de la publicación del blog, debe mencionar qué palabras clave deben colocarse.\n\nA continuación, se detallan otras cosas que debe tener en cuenta:\n\n- Todas las palabras clave deben colocarse dentro de la publicación del blog. Para cada sección, mencione qué palabras clave incluir. La ubicación de las palabras clave debe sentirse natural y debe tener sentido.\n\n- Debe incluir todos los puntos de investigación en la publicación del blog. Al incluir los puntos de investigación, asegúrese de incluir también su URL de origen para que el redactor pueda usarlos como hipervínculos.\n\n- Debes asegurarte de que el plan creado satisfaga la intención de búsqueda y gire directamente en torno a las palabras clave proporcionadas.\n\n- Tu plan debe ser muy detallado.\n\n- Ten en cuenta que el redactor que utilizará tu plan para escribir la publicación del blog no es un experto en el tema de la publicación del blog. Por lo tanto, debes brindarle todos los detalles necesarios para que pueda convertirlo en párrafos bien formateados. Por lo tanto, tu plan debe incluir todos los detalles técnicos sobre cada punto que se incluirá en la publicación del blog. Por ejemplo, en lugar de decir \"definir X\", debe decir \"definir X como...\".\n\n- El plan que crees debe tener un flujo que tenga sentido.\n\n- Debes asegurarte de que la publicación del blog sea muy detallada y satisfaga los conceptos más importantes sobre el tema.\n\nAcaba de llegar a su escritorio un nuevo proyecto con los siguientes detalles:\n\nPalabras clave:\n{{ $('Code10').item.json.Tema }}\n\nIntención de búsqueda:\n{{ $('Code10').item.json.Tema }}\n\nPlan preliminar:\n{{ $('Preliminary Plan').item.json.message.content }}\n\nResultados de la investigación:\n{{ $json.research }}\n\nPalabra clave principal:\n{{ $('Code10').item.json.Tema }}\n\n-Antes de crear el plan ejecute la funcion base_conocimiento() para verificar que la informacion es acorde a mi empresa\n\nCree el plan detallado.\n\nsu web es https://universidadisep.com/\n\nSu resultado debe ser solo el plan y nada más.\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -260,
+        240
+      ],
+      "id": "1b6c7425-581d-4cfd-9c10-883c78dc70bb",
+      "name": "Create plan",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Eres parte de un equipo que crea publicaciones de blog de primera clase. Eres el mejor redactor del equipo y tu responsabilidad es escribir la publicación del blog siguiendo un plan detallado proporcionado.\n\nPara este proyecto, se te ha dado un plan detallado que debes seguir paso a paso. Tu tarea es crear una publicación de blog completa basada en este plan.\n\nLa publicación del blog que crees debe cumplir con los siguientes requisitos:\n\nSeguir el plan paso a paso: Asegúrate de cubrir todos los puntos mencionados en el plan detallado.\n\nUtilizar párrafos cortos: Facilita la lectura con párrafos concisos y bien estructurados.\n\nUsar viñetas y subtítulos con palabras clave: Incorpora viñetas y subtítulos para organizar el contenido y mejorar la legibilidad.\n\nSer denso en valor y directo: Evita contenido superfluo. Cada palabra debe aportar valor al lector.\n\nSer muy detallado: Proporciona información completa y precisa en cada sección.\n\nIncluir palabras clave: Asegúrate de incluir las palabras clave mencionadas en cada sección dentro de esa sección.\n\nColocar la palabra clave principal en el título, el encabezado H1 y al principio de la introducción: Optimiza el SEO utilizando la palabra clave principal de manera estratégica.\n\nIncluir sinónimos y palabras clave LSI: Usa sinónimos y términos relacionados para mejorar el contexto y el SEO.\n\nExtensión mínima de 2000 a 2500 palabras: Asegúrate de que el contenido sea lo suficientemente extenso y detallado.\n\nNivel de lectura de quinto año: Escribe de manera clara y sencilla para que sea accesible a un público amplio.\n\nPlan detallado proporcionado:\n{{ $('Create plan').item.json.message.content }}\n\nInstrucciones adicionales:\n\nSi el plan detallado incluye referencias o enlaces, asegúrate de incorporarlos en el contenido donde sea relevante.\n\nSi no hay investigación detallada proporcionada, enfócate en desarrollar el contenido basado en el plan y tu conocimiento experto.\n\nEjemplo de estructura esperada:\n\nTítulo del blog: Incluye la palabra clave principal.\n\nIntroducción: Presenta el tema y la palabra clave principal.\n\nSubtítulos (H2, H3, etc.): Organiza el contenido en secciones claras.\n\nCuerpo del blog: Desarrolla cada punto del plan con detalles, viñetas y ejemplos.\n\nConclusión: Resume los puntos clave y cierra con un llamado a la acción."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        280,
+        240
+      ],
+      "id": "c9ed2df0-65e0-434a-a8cb-50f4702e8a8f",
+      "name": "Write Blog",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "previous-posts",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        -180
+      ],
+      "id": "b7e6cf79-0cc5-496a-997e-7139cbb6856b",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1t-J2x22lsG6TpktQLBkwaS-ewuJI2WQvB-g4vQspbYU",
+          "mode": "list",
+          "cachedResultName": "Completed Keywords",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1t-J2x22lsG6TpktQLBkwaS-ewuJI2WQvB-g4vQspbYU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1t-J2x22lsG6TpktQLBkwaS-ewuJI2WQvB-g4vQspbYU/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -220,
+        -180
+      ],
+      "id": "f7134d08-bc96-4a32-8dcf-be6406d3577f",
+      "name": "Previous Posts",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "03BCz2cGo39tBzET",
+          "name": "uisep_google"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "o1-mini-2024-09-12",
+          "mode": "list",
+          "cachedResultName": "O1-MINI-2024-09-12"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Formas parte de un equipo que crea publicaciones de blog de primera clase.\n\nEstás a cargo de los enlaces internos entre publicaciones de blog.\n\nPor cada nueva publicación de blog que llega a tu escritorio, tu trabajo es revisar los blogs publicados anteriormente y crear al menos 5 enlaces internos.\n\nPara elegir las mejores oportunidades de enlaces internos, debes:\n\n- Leer los resúmenes de las publicaciones de blog anteriores y buscar sus palabras clave. Si hay una coincidencia en la que la publicación de blog anterior es muy relevante, entonces esta es una oportunidad de enlace interno.\n\n- No incluyas enlaces si no son muy relevantes. Solo incluye un enlace si tiene sentido y agrega valor para el lector.\n\nUna vez que hayas encontrado las mejores oportunidades de enlaces, debes actualizar la publicación de blog con los enlaces internos. Para hacer esto, debes:\n\n- Agregar el enlace de la publicación de blog anterior en la sección correspondiente de la nueva publicación de blog. Colocar la URL en el lugar que tenga más sentido. Más tarde, haremos un hipervínculo de la URL a la palabra en la publicación de blog junto a la cual está ubicada. Por eso, tu ubicación es muy importante.\n\nAsegúrate de no eliminar ninguna URL existente ni cambiar nada de la publicación del blog que se te proporcionó. Solo debes agregar nuevas URL de enlaces internos y generar la publicación del blog revisada.\n\nTu salida debe ser la publicación del blog que se te proporcionó más las nuevas URL. No elimines ninguna información.\n\nNo devuelvas las publicaciones del blog anteriores. Solo devuelve la publicación del blog actual con los enlaces internos agregados.\n\nPublicación del blog actual:\n{{ $('Write Blog').last().json.message.content }}\n\nPublicaciones del blog anteriores:\n{{ $('Tema a Procesados1').item.json.Tema_generado }}\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        700,
+        240
+      ],
+      "id": "cd76b191-7698-4171-b843-c04f180c94c1",
+      "name": "Add internal links",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Crea un slug para la siguiente publicación del blog:\n{{ $('Add internal links').item.json.message.content }}\n\nUn slug en una publicación del blog es la parte de la URL que viene después del nombre de dominio e identifica una página específica. Por lo general, es una frase breve y descriptiva que resume el contenido de la publicación, lo que facilita que los usuarios y los motores de búsqueda comprendan de qué se trata la página. Por ejemplo, en la URL www.example.com/intelligent-agents, el slug es intelligent-agents. Un buen slug es conciso, contiene palabras clave relevantes y evita palabras innecesarias para mejorar la legibilidad y el SEO.\n\nEl slug debe tener un máximo de 4 o 5 palabras y debe incluir la palabra clave principal de la publicación del blog, que es {{ $('Code10').item.json.Tema }}.\n\nSu salida debe ser el slug y nada más para que pueda copiar y pegar su salida y ponerla al final de la URL de mi publicación de blog para publicarla de inmediato."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1540,
+        260
+      ],
+      "id": "4cc2e3fe-c405-46b0-9072-0908d78e9369",
+      "name": "Slug",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-2024-11-20",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-2024-11-20"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Extraiga el título de la publicación del blog de la siguiente publicación:\n{{ $('Add internal links').item.json.message.content }}\n\nEl título de la publicación del blog debe incluir la palabra clave principal {{ $('Code10').item.json.Tema }} y debe informar a los usuarios de inmediato qué pueden esperar al leer la publicación del blog.\n\n- No coloque la salida en \"\". La salida debe ser solo texto sin Markdown ni formato.\n\nSu salida debe ser solo el título de la publicación del blog y nada más."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1880,
+        300
+      ],
+      "id": "190d92b8-c9a0-4e42-a63c-c0a659be5b57",
+      "name": "Title",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=\n963 / 5,000\nCrea una buena meta descripción para la siguiente publicación de blog:\n\n{{ $('Add internal links').item.json.message.content }}\n\nUna buena meta descripción para una publicación de blog optimizada para SEO debe:\n- Ser concisa: no debe exceder los 150-160 caracteres para garantizar que la descripción completa se muestre en los resultados de búsqueda.\n- Incluir palabras clave: incorporar palabras clave principales de forma natural para mejorar la visibilidad y la relevancia para las consultas de búsqueda.\n\nPalabra clave principal = {{ $('Code10').item.json.Tema }}\n\nMás palabras clave para incluir si es posible \n\n- Ofrecer valor: describir claramente lo que el lector aprenderá o ganará al hacer clic en el enlace.\n\n- Ser atractivo: utilizar un lenguaje persuasivo, como verbos de acción o una pregunta, para fomentar los clics.\n\n- Alineación con el contenido: asegúrese de que la descripción refleje con precisión la publicación del blog para cumplir con las expectativas de los usuarios y reducir las tasas de rebote.\n\nSu contenido debe ser únicamente la meta descripción y nada más."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        2200,
+        300
+      ],
+      "id": "a922bf6a-a122-4ea0-b0f0-e8bccc4a4ca5",
+      "name": "Meta description",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=NO IMPRIMAS NADA QUE NO SEA EL CÓDIGO. Quiero que sigas el diseño de la plantilla como guía para generar el código de WordPress para una publicación de blog. Estas son las reglas a seguir:\n\nLa publicación del blog debe tener un título, tiempo estimado de lectura, conclusiones clave, índice, cuerpo y preguntas frecuentes en este orden.\nHaz que sea atractiva utilizando cursiva, puntos, comillas, negrita, espacios y, a veces, nuevas líneas. Nunca uses emojis.\nLa publicación del blog tendrá algunas URL referenciadas junto a ciertas frases clave para mostrar de dónde proviene la información. Debes hacer un hipervínculo entre la frase clave y la URL proporcionada para que el lector pueda hacer clic en la URL referenciada. Es fundamental que lo hagas bien.\nEnvuelve todo el contenido en un contenedor <div> con CSS en línea que establezca el color del texto en blanco (#00000), use una fuente legible como Arial, sans-serif y establezca la altura de línea en 1.6.\nAsegúrese de que todos los elementos de texto que no sean encabezados (por ejemplo, párrafos, elementos de lista) tengan un estilo en línea o un estilo incrustado que establezca el tamaño de fuente en 20 px y el color en blanco (#00000) utilizando !important para anular los estilos de tema.\nLos hipervínculos, los puntos en la tabla de contenidos y las preguntas frecuentes deben tener un estilo azul (#00c2ff).\nTodos los encabezados y subtítulos deben tener un subrayado implementado a través de un borde inferior en azul (#00c2ff) con el relleno adecuado.\nColoque un doble salto (<br><br>) entre cada sección para mejorar la legibilidad.\nNo imprima ningún texto adicional ni mencione etiquetas de código como HTML''' alrededor de la salida; solo imprima el código HTML.\nEntrada de blog:\n\n{{ $json.message.content }}\n\nA continuación, se muestra un ejemplo de una salida con un formato correcto:\n\n<div style=\"color: #00000; font-family: Arial, sans-serif; line-height: 1.6;\"> <style> p, .wp-block-paragraph, ul.wp-block-list, li { color: #00000 !important; font-size: 20px !important; } a { color: #00c2ff !important; } </style> <h1 id=\"h-devin-ai-the-hype-and-reality-of-an-ai-software-engineer\" class=\"wp-block-heading\" style=\"border-bottom: 2px solid #00c2ff; padding-bottom: 5px;\">Devin AI: La publicidad y la realidad de un ingeniero de software de IA</h1> <br><br> <p class=\"estimated-reading-time\" style=\"color: #00000; font-size: 20px !important;\">Tiempo de lectura estimado: 5 minutos</p> <br><br> <h2 id=\"h-key-takeaways\" class=\"wp-block-heading\" style=\"border-bottom: 2px solid #00c2ff; padding-bottom: 5px;\"><strong>Conclusiones clave</strong></h2> <br><br> <ul class=\"wp-block-list\"> <li><mark style=\"background-color: #ffd966;\"><strong>Devin AI</strong></mark> afirma ser el primer ingeniero de software de IA completamente autónomo del mundo.</li> <br><br> <li>Las demostraciones y afirmaciones iniciales han generado un <mark style=\"background-color: #ffff00;\">bombo publicitario</mark> e interés significativos.</li> <br><br> <li>Los críticos argumentan que algunas capacidades pueden ser exageradas o engañosas.</li> <br><br> <li>Las pruebas en el mundo real revelan tanto <em>fortalezas</em> como <em>limitaciones</em>.</li> <br><br> <li>El verdadero impacto en la ingeniería de software aún está por verse.</li> </ul> <br><br> <div class=\"wp-block-yoast-seo-table-of-contents yoast-table-of-contents\"> <h2 style=\"color: #000000; borde inferior: 2px sólido #00c2ff; padding-bottom: 5px;\">Índice</h2> <br><br> <ul> <li><a href=\"#h-devin-ai-the-hype-and-reality-of-an-ai-software-engineer\" data-level=\"1\">Devin AI: el bombo y la realidad de un ingeniero de software de IA</a></li> <br><br> <li><a href=\"#h-key-takeaways\" data-level=\"2\">Conclusiones clave</a></li> <br><br> <li><a href=\"#h-what-is-devin-ai\" data-level=\"2\">¿Qué es Devin AI?</a></li> <br><br> <li><a href=\"#h-the-hype-around-devin-ai\" data-level=\"2\">El bombo en torno a Devin AI</a></li> <br><br> <li><a href=\"#h-putting-devin-to-the-test\" data-level=\"2\">Poniendo a prueba a Devin</a></li> <br><br> <li><a href=\"#h-the-reality-check\" data-level=\"2\">La comprobación de la realidad</a></li> <br><br> <li><a href=\"#h-the-future-of-ai-in-software-development\" data-level=\"2\">El futuro de la IA en el desarrollo de software</a></li> <br><br> <li><a href=\"#h-frequently-asked-questions\" data-level=\"2\">Preguntas frecuentes</a></li> </ul> </div> <br><br> <p>Devin AI ha irrumpido en la escena tecnológica, prometiendo revolucionar el desarrollo de software tal como lo conocemos. Pero, ¿este asistente de codificación impulsado por IA está a la altura de las expectativas? Profundicemos en lo que realmente es Devin AI, lo que puede hacer y lo que dicen los desarrolladores después de ponerlo a prueba.</p> <br><br> </div>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1180,
+        260
+      ],
+      "id": "cf007e30-3386-4a02-b593-f6b8972c2603",
+      "name": "HTML version",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Research\n \n \n",
+        "height": 240,
+        "width": 180
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -760,
+        -320
+      ],
+      "typeVersion": 1,
+      "id": "aff9c43b-ddea-4829-a814-4f7954643952",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Post Plan \n \n",
+        "height": 240,
+        "width": 300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -280,
+        160
+      ],
+      "typeVersion": 1,
+      "id": "7ab078b4-a921-4606-b741-040a4520848a",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Writing Blog\n \n \n",
+        "height": 240,
+        "width": 300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        200,
+        160
+      ],
+      "typeVersion": 1,
+      "id": "a2b0720c-f140-4357-b01d-7a04596375b8",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
         "method": "POST",
-        "url": "https://black-forest-labs-flux-1-dev.hf.space/gradio_api/call/infer",
+        "url": "https://api.perplexity.ai/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"data\": [\n    \"Hello!!\",\n    0,\n    true,\n    1080,\n    1080,\n    1,\n    1\n  ]\n}",
+        "jsonBody": "={\n  \"model\": \"sonar-pro\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Act as a professional news researcher who is capable of finding detailed summaries about a news topic from highly reputable sources.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $json.message.content.split(/\\n+/).join(' ').replaceAll('\"', ' ') }}\"\n    }\n  ]\n}\n",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2660,
-        -680
+        -720,
+        -240
       ],
-      "id": "079544ca-1111-4d32-9155-0853c4e78947",
-      "name": "HTTP Request2"
+      "id": "92977095-cf28-409c-ac90-59d27e18d78f",
+      "name": "Research",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "AeLB5dEMXRr8QISG",
+          "name": "uchat_TH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Internal Links\n \n \n",
+        "height": 240,
+        "width": 300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        700,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "8b62afd5-5b46-46b4-b496-5cefa7adeb18",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## HTML\n\n \n \n",
+        "height": 240,
+        "width": 340
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1120,
+        180
+      ],
+      "typeVersion": 1,
+      "id": "1d2c745a-ba79-4e82-81ae-b6c19541be4b",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Slug\n\n\n \n \n",
+        "height": 240,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1520,
+        180
+      ],
+      "typeVersion": 1,
+      "id": "fb6017ce-14fe-4e0b-b76a-dfbdee046e76",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## Post Title\n\n\n \n \n",
+        "height": 240,
+        "width": 300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1860,
+        220
+      ],
+      "typeVersion": 1,
+      "id": "a419c5eb-182d-4121-9c93-7bbceeeff43f",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "## Meta Description\n\n\n \n \n",
+        "height": 240,
+        "width": 300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2160,
+        220
+      ],
+      "typeVersion": 1,
+      "id": "23f29b5e-5d5c-42c5-bbde-4a6324000165",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "name": "base_conocimiento",
+        "description": "Informacion de la universidad Isep"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        480
+      ],
+      "id": "511a6f62-b0a8-40e7-9a89-8df85b70c4a5",
+      "name": "Answer questions with a vector store"
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "noco_db",
+          "mode": "list",
+          "cachedResultName": "noco_db"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        600
+      ],
+      "id": "9e0ecb70-78f9-44b2-9d01-510659f885b7",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "9XRFVIreOIYRz13a",
+          "name": "Universidad ISEP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -80,
+        700
+      ],
+      "id": "cc3a244f-b079-48b0-a070-d2d39ca3337b",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -340,
+        760
+      ],
+      "id": "2a353627-cb52-4802-8925-ac9ca6844add",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "base_conocimiento",
+        "description": "Informacion de la universidad Isep"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        220,
+        520
+      ],
+      "id": "f5dd1044-3c0c-42bf-8c82-49e7a3c6b407",
+      "name": "Answer questions with a vector store1"
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "noco_db",
+          "mode": "list",
+          "cachedResultName": "noco_db"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1,
+      "position": [
+        100,
+        760
+      ],
+      "id": "e2b98014-6991-487e-8d58-d06b14e5873d",
+      "name": "Qdrant Vector Store1",
+      "credentials": {
+        "qdrantApi": {
+          "id": "9XRFVIreOIYRz13a",
+          "name": "Universidad ISEP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        920
+      ],
+      "id": "281c401a-4a7d-47b3-b29a-c076afe3aa3d",
+      "name": "OpenAI Chat Model6",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        900
+      ],
+      "id": "6697d32b-023c-4d40-a126-3894f141c3d2",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "nocoDbApiToken",
+        "operation": "getAll",
+        "projectId": "p3cpnxtdr7bnmx0",
+        "table": "mjqbxtdjta0lhtg",
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.nocoDb",
+      "typeVersion": 3,
+      "position": [
+        -1460,
+        240
+      ],
+      "id": "fe8fdfd0-89ae-4659-85bd-f6d5a266cc7b",
+      "name": "NocoDB4",
+      "credentials": {
+        "nocoDbApiToken": {
+          "id": "b4YE40MyHMnrq6qk",
+          "name": "NocoDB_chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "nocoDbApiToken",
+        "operation": "getAll",
+        "projectId": "p3cpnxtdr7bnmx0",
+        "table": "mf5ck7xxaa91fvk",
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.nocoDb",
+      "typeVersion": 3,
+      "position": [
+        -1200,
+        240
+      ],
+      "id": "59c224af-436a-4287-a6ee-969212d7c7d1",
+      "name": "Tema a Procesados1",
+      "executeOnce": true,
+      "credentials": {
+        "nocoDbApiToken": {
+          "id": "b4YE40MyHMnrq6qk",
+          "name": "NocoDB_chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// const temasProcesar =$('NocoDB4').all(); // Temas a procesar\n// const temasProcesados = $input.all(); // Temas ya procesados\n\n// // Filtrar temas que no están en la tabla de temas procesados\n// const temasNoProcesados = temasProcesar.filter(tema => {\n//   return !temasProcesados.some(procesado => procesado.json.Tema_generado === tema.json.Tema);\n// });\n\n// return temasNoProcesados;\nconst temasProcesar = $('NocoDB4').all(); // Temas a procesar\nconst temasProcesados = $input.all(); // Temas ya procesados\n\n// Filtrar temas que no están en la tabla de temas procesados y que tienen \"Procesar\" en true\nconst temasNoProcesados = temasProcesar.filter(tema => {\n  return tema.json.Procesar === true && \n         !temasProcesados.some(procesado => procesado.json.Tema_generado === tema.json.Tema);\n});\n\nreturn temasNoProcesados;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -940,
+        240
+      ],
+      "id": "023d9ccf-b8ca-410a-b9b1-7fb5ee3fc586",
+      "name": "Code10"
+    },
+    {
+      "parameters": {
+        "name": "base_conocimiento",
+        "description": "Informacion de la universidadisep"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        480
+      ],
+      "id": "ad3a3031-0946-4ac5-8611-87d4178a73ce",
+      "name": "Answer questions with a vector store2"
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "noco_db",
+          "mode": "list",
+          "cachedResultName": "noco_db"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1,
+      "position": [
+        -920,
+        700
+      ],
+      "id": "37ef8079-8a6c-4d9b-a057-cc81cce28bb4",
+      "name": "Qdrant Vector Store2",
+      "credentials": {
+        "qdrantApi": {
+          "id": "9XRFVIreOIYRz13a",
+          "name": "Universidad ISEP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -520,
+        700
+      ],
+      "id": "6408be8f-bc02-49eb-9fb3-5b66f4f293b2",
+      "name": "OpenAI Chat Model7",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -920,
+        860
+      ],
+      "id": "dca49a5e-7f42-44a5-a245-6c364008be06",
+      "name": "Embeddings OpenAI2",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "gpt-4o"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2600,
+        480
+      ],
+      "id": "ec89cb32-28d4-4e36-9312-f1e97b58fb8d",
+      "name": "OpenAI Chat Model8",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Crea una imagen inspiradora y visualmente atractiva que represente el siguiente concepto: \"{{ $json.message.content }}\". La imagen debe ser adecuada para una página web universitaria, por lo que debe evitar cualquier contenido violento, negativo o inapropiado. \n\nIncluye los siguientes elementos, si son relevantes para el concepto:\n1. **Ambiente positivo**: Luz natural, colores vibrantes y un tono general de optimismo.\n2. **Diversidad**: Personas de diferentes géneros, edades y etnias, interactuando de manera colaborativa.\n3. **Contexto educativo**: Elementos como libros, laptops, pizarras, o símbolos de conocimiento (opcional, si el concepto lo permite).\n4. **Naturaleza o entorno moderno**: Áreas verdes, edificios modernos o paisajes urbanos (opcional, si el concepto lo permite).\n5. **Innovación**: Tecnología, ideas creativas o progreso (opcional, si el concepto lo permite).\n\nAsegúrate de que la imagen sea profesional, atractiva y adecuada para un público académico y general.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        2600,
+        300
+      ],
+      "id": "40f53599-7a3d-411b-9ab5-87270c8061ae",
+      "name": "AI Agent promt para generar la imagen2"
+    },
+    {
+      "parameters": {
+        "jsCode": "const newsItems = $input.all();\n\nconst cleanedNews = newsItems.map(item => {\n  const rawText = item.json.output;\n\n  // Elimina etiquetas HTML\n  const textWithoutHTML = rawText.replace(/<[^>]+>/g, \"\");\n\n  // Elimina saltos de línea y espacios múltiples\n  let cleanText = textWithoutHTML\n    .replace(/\\n/g, \" \") // Reemplaza saltos de línea con espacios\n    .replace(/\\s+/g, \" \") // Reduce múltiples espacios a uno solo\n    .replace(/\\*/g, \" \") // Elimina asteriscos\n    .replace(/\\#/g, \" \") // Elimina almohadillas\n    .replace(/\\\\/g, \"\") // Elimina barras invertidas\n    .replace(/\"/g, \"'\") // Reemplaza comillas dobles con comillas simples\n    .trim(); // Elimina espacios al inicio y al final\n\n  // Escapa el texto para JSON\n  cleanText = JSON.stringify(cleanText).slice(1, -1);\n\n  // Trunca el texto a 1000 caracteres\n  cleanText = cleanText.slice(0, 1000);\n\n  return {\n    noticia: cleanText\n  };\n});\n\nreturn cleanedNews;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3000,
+        300
+      ],
+      "id": "14ef198c-6342-46e2-9af0-a53864ccc2ad",
+      "name": "Code5"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/generations",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": \"{{$input.all()[0].json.noticia}}\",\n  \"n\": 1, \n  \"size\": \"1024x1024\" \n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3260,
+        300
+      ],
+      "id": "c748dfb1-42eb-48a1-b3b3-9f9b040259bb",
+      "name": "HTTP Request2",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "nocoDbApiToken",
+        "operation": "create",
+        "projectId": "p3cpnxtdr7bnmx0",
+        "table": "mf5ck7xxaa91fvk",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldName": "Tema_generado",
+              "fieldValue": "={{ $('Code10').item.json.Tema }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.nocoDb",
+      "typeVersion": 3,
+      "position": [
+        80,
+        240
+      ],
+      "id": "ec836d23-9132-4cdb-99ba-efe36607c084",
+      "name": "NocoDB5",
+      "credentials": {
+        "nocoDbApiToken": {
+          "id": "b4YE40MyHMnrq6qk",
+          "name": "NocoDB_chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "nocoDbApiToken",
+        "operation": "create",
+        "projectId": "p3cpnxtdr7bnmx0",
+        "table": "ma1px4rdgv29o8y",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldName": "Imagen de post",
+              "fieldValue": "={{ $json.image_url }}"
+            },
+            {
+              "fieldName": "Post creado",
+              "fieldValue": "={{ $json.content }}"
+            },
+            {
+              "fieldName": "tema",
+              "fieldValue": "={{ $('Code10').item.json.Tema }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.nocoDb",
+      "typeVersion": 3,
+      "position": [
+        3760,
+        300
+      ],
+      "id": "d1aae53f-a488-453a-a81f-043eb870552c",
+      "name": "NocoDB6",
+      "credentials": {
+        "nocoDbApiToken": {
+          "id": "s5P2QFmMipXho8qh",
+          "name": "NocoDB Token account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const postContent = $('HTML version').item.json.message.content\nconst imageUrl = $('TakeURL').item.json.images[0].url \n\nconst combinedData = {\n  title: \"Título del Post\",\n  content: postContent ,\n  image_url: imageUrl,\n  status: \"pending_approval\" \n};\n\nreturn combinedData;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3520,
+        300
+      ],
+      "id": "33d92d5b-8369-42ae-b607-0e0cfd5fd722",
+      "name": "Code11"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/generations",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer $OPENAI_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "dall-e-3"
+            },
+            {
+              "name": "prompt",
+              "value": "a white siamese cat"
+            },
+            {
+              "name": "n",
+              "value": "1"
+            },
+            {
+              "name": "size",
+              "value": "1024x1024"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3240,
+        900
+      ],
+      "id": "6bdc171e-5116-449f-a3e8-dad436f2e798",
+      "name": "HTTP Request3",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "o1-mini",
+          "mode": "list",
+          "cachedResultName": "O1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Utiliza el contenido del mensaje para generar un prompt detallado y descriptivo que devuelva una imagen representativa del tema tratado.\n\nnecesito que el formato de respuesta sea en texto plano y valido para usar en un json\n\nno uses saltos de linea\nno uses caracteres especiales \nno uses comillas \" o '\ncualquier texto debe ser en español\nusa elementos reales, como personas \n\n{{ $json['Unidad 1'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        2620,
+        60
+      ],
+      "id": "ef72acb5-adf9-4e6a-9b72-3773b51b6608",
+      "name": "Promt text=tp=image",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3300,
+        60
+      ],
+      "id": "f239fccf-97b7-45af-996f-e56d924e59e9",
+      "name": "Wait",
+      "webhookId": "e2f29db4-5602-4d93-b184-77bc377e8dc3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/flux-lora",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 9306d295-9322-499b-a867-2d7055eb24fa:47db85890757b09f959d0d4baf046bbe"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": \"{{ $json.message.content }}\",\n  \"image_size\": \"landscape_4_3\",\n  \"num_inference_steps\": 28,\n  \"guidance_scale\": 3.5,\n  \"num_images\": 1,\n  \"enable_safety_checker\": true,\n  \"output_format\": \"jpeg\"\n}\n ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3040,
+        60
+      ],
+      "id": "5b4c1c14-9cb5-4ad2-a1a6-64e20bdf3f1c",
+      "name": "Request Flux Api"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/flux-lora/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Key 9306d295-9322-499b-a867-2d7055eb24fa:47db85890757b09f959d0d4baf046bbe"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3600,
+        60
+      ],
+      "id": "b82f3454-f9d0-4924-8d63-2f3d4359e536",
+      "name": "TakeURL"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.images[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3820,
+        60
+      ],
+      "id": "9e27fbd4-7c26-454e-af11-dd8b438ba4e4",
+      "name": "Download IMG"
+    },
+    {
+      "parameters": {
+        "path": "a08e3b6d-d5e9-4269-8a40-ce36dc9e13f4",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1760,
+        240
+      ],
+      "id": "fe287c11-9cb2-435c-8c93-c66a47e409ce",
+      "name": "Webhook",
+      "webhookId": "a08e3b6d-d5e9-4269-8a40-ce36dc9e13f4"
     }
   ],
   "pinData": {
@@ -1357,22 +2854,26 @@
     "callerPolicy": "workflowsFromSameOwner",
     "errorWorkflow": "eXrqA7vJfW3kIU2i"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [
-    {
-      "createdAt": "2025-02-20T20:11:19.525Z",
-      "updatedAt": "2025-02-20T20:11:19.525Z",
-      "id": "PeoIz6bFcQwZKWNt",
-      "name": "PRUEBA"
-    },
     {
       "createdAt": "2024-12-13T23:39:23.582Z",
       "updatedAt": "2024-12-13T23:39:23.582Z",
       "id": "iYIqNjvo2VXg5kHz",
       "name": "Universidad ISEP"
+    },
+    {
+      "createdAt": "2025-02-20T20:11:19.525Z",
+      "updatedAt": "2025-02-20T20:11:19.525Z",
+      "id": "PeoIz6bFcQwZKWNt",
+      "name": "PRUEBA"
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-01T22:10:46.166Z",
-  "versionId": "8d510d16-1c9d-4a25-ab86-7bbfbb9d9ff8"
+  "updatedAt": "2025-03-05T14:52:18.315Z",
+  "versionId": "050174db-3f1b-4ccc-b4a5-ad511d5aed8c"
 }
