@@ -452,8 +452,8 @@
           "value": {
             "active": true,
             "number": "={{ $('Busca_Numeros_Disponibles1').item.json.number }}",
-            "friendly_name": "=Ventas_Mexico",
-            "use": "Ventas",
+            "friendly_name": "=Cobranzas_Mexico",
+            "use": "Cobranzas",
             "country": "={{ $('Busca_Numeros_Disponibles1').item.json.country }}"
           },
           "matchingColumns": [
@@ -537,7 +537,9 @@
               "type": "boolean",
               "canBeUsedToMatch": true
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
         "options": {}
       },
@@ -1307,8 +1309,8 @@
           "value": {
             "active": true,
             "number": "={{ $('Busca_Numeros_Disponibles4').item.json.number }}",
-            "friendly_name": "=Ventas_Brasil",
-            "use": "Ventas",
+            "friendly_name": "=Cobranzas_Brasil",
+            "use": "Cobranzas",
             "country": "={{ $('Busca_Numeros_Disponibles4').item.json.country }}"
           },
           "matchingColumns": [
@@ -1392,7 +1394,9 @@
               "type": "boolean",
               "canBeUsedToMatch": true
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
         "options": {}
       },
@@ -1596,8 +1600,8 @@
           "value": {
             "active": true,
             "number": "={{ $('Busca_Numeros_Disponibles2').item.json.number }}",
-            "friendly_name": "=Ventas_Colombia",
-            "use": "Ventas",
+            "friendly_name": "=Cobranzas_Colombia",
+            "use": "Cobranzas",
             "country": "={{ $('Busca_Numeros_Disponibles2').item.json.country }}"
           },
           "matchingColumns": [
@@ -1681,7 +1685,9 @@
               "type": "boolean",
               "canBeUsedToMatch": true
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
         "options": {}
       },
@@ -1707,7 +1713,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "UPDATE calloutbound\nSET from_number = \n    CASE\n        WHEN reason_for_call LIKE '%Cobranzas%' AND reason_for_call LIKE '%MX' THEN '{{ $json.number }}'\n        ELSE from_number\n    END\nWHERE reason_for_call LIKE '%Cobranzas%';",
+        "query": "UPDATE calloutbound_cobranzas\nSET from_number = \n    CASE\n        WHEN reason_for_call LIKE '%Cobranzas%' AND reason_for_call LIKE '%MX' THEN '{{ $json.number }}'\n        ELSE from_number\n    END\nWHERE reason_for_call LIKE '%Cobranzas%';",
         "options": {}
       },
       "id": "a413bb86-d57f-4a03-a9e1-08042366c647",
@@ -1728,7 +1734,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "UPDATE calloutbound\nSET from_number = \n    CASE\n        WHEN reason_for_call LIKE '%Cobranzas%' AND reason_for_call LIKE '%CO' THEN '{{ $json.number }}'\n        ELSE from_number\n    END\nWHERE reason_for_call LIKE '%Cobranzas%';",
+        "query": "UPDATE calloutbound_cobranzas\nSET from_number = \n    CASE\n        WHEN reason_for_call LIKE '%Cobranzas%' AND reason_for_call LIKE '%CO' THEN '{{ $json.number }}'\n        ELSE from_number\n    END\nWHERE reason_for_call LIKE '%Cobranzas%';",
         "options": {}
       },
       "id": "0a2c3121-787a-40af-a627-ea5d71059a06",
@@ -1749,7 +1755,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "UPDATE calloutbound\nSET from_number = \n    CASE\n        WHEN reason_for_call LIKE '%Cobranzas%' AND reason_for_call LIKE '%BR' THEN '{{ $json.number }}'\n        ELSE from_number\n    END\nWHERE reason_for_call LIKE '%Cobranzas%';",
+        "query": "UPDATE calloutbound_cobranzas\nSET from_number = \n    CASE\n        WHEN reason_for_call LIKE '%Cobranzas%' AND reason_for_call LIKE '%BR' THEN '{{ $json.number }}'\n        ELSE from_number\n    END\nWHERE reason_for_call LIKE '%Cobranzas%';",
         "options": {}
       },
       "id": "bfa074ea-deb2-4c1d-9e1a-39f81ee93328",
@@ -1810,9 +1816,9 @@
   "tags": [
     {
       "createdAt": "2024-12-19T22:53:31.528Z",
-      "updatedAt": "2024-12-19T22:53:31.528Z",
+      "updatedAt": "2025-03-05T03:18:09.377Z",
       "id": "JeuR9KgbxHoHPzZx",
-      "name": "Dinamic_Number_Display"
+      "name": "A-Dinamic_Number_Display"
     },
     {
       "createdAt": "2025-02-28T02:29:41.371Z",
@@ -1822,12 +1828,12 @@
     },
     {
       "createdAt": "2024-12-04T00:40:48.979Z",
-      "updatedAt": "2024-12-04T00:40:48.979Z",
+      "updatedAt": "2025-03-05T03:06:16.050Z",
       "id": "Y1BsKfyyH4T8xRCR",
-      "name": "iallamadas"
+      "name": "A-iallamadas"
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-03T01:46:43.275Z",
-  "versionId": "50d76664-ec89-4273-bf8a-ca3da37a2354"
+  "updatedAt": "2025-03-05T23:09:59.809Z",
+  "versionId": "6468f36a-b9b6-454e-ae36-27ff96f749f4"
 }
