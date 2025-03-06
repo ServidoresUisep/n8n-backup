@@ -1,0 +1,2310 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Odoo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Odoo": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-03T20:10:26.490Z",
+  "id": "nC7Kvdh1EC4CVmje",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Bienvenida",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "26b7ffdf-1f99-40fd-a124-0c9bf648b0fc",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "resource": "custom",
+        "customResource": "data.master.make",
+        "operation": "getAll",
+        "returnAll": true,
+        "options": {
+          "fieldsList": [
+            "name_student",
+            "name_admission",
+            "phone",
+            "date_start_class",
+            "date_first_payment"
+          ]
+        },
+        "filterRequest": {
+          "filter": [
+            {
+              "fieldName": "date_start_class",
+              "value": "={{ $now.plus(8, \"days\").format('yyyy-MM-dd') }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.odoo",
+      "typeVersion": 1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "ee330eb0-d78f-4c42-ba07-ddc84fd48f59",
+      "name": "Odoo",
+      "credentials": {
+        "odooApi": {
+          "id": "19",
+          "name": "Odoo APP 16"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.retellai.com/v2/create-phone-call",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\"to_number\":\"+{{ $json.phone }}\",\n\"from_number\":\"+528141700276\",\n\"override_agent_id\":\"3977748ad57d925e87a7aabcea5f45d1\",\n\"retell_llm_dynamic_variables\": {\n\"name\":\"{{$json.name_student}}\",\n\"campaign_name\":\"\",\n\"llamada\": \"1\",\n\"id_oddo\":\"{{ $json.id }}\",\"email_user\":\"\",\"uid\":\"\",\n\"chatInput\":\"\"}} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "id": "228e7161-049d-4e3d-8f2f-e33129a74f6d",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "UZWddF8I8s7OjOEp",
+          "name": "retell"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Odoo": [
+      {
+        "json": {
+          "id": 2,
+          "name_student": "Eilyn Socarras Hernández",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17864790632",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-14"
+        }
+      },
+      {
+        "json": {
+          "id": 3,
+          "name_student": "Mónica Nohemy Cuevas Lerma",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "",
+          "date_start_class": "2024-11-29",
+          "date_first_payment": "2024-10-01"
+        }
+      },
+      {
+        "json": {
+          "id": 4,
+          "name_student": "Fabiola Gutiérrez González",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "",
+          "date_start_class": "2024-11-29",
+          "date_first_payment": "2024-07-14"
+        }
+      },
+      {
+        "json": {
+          "id": 9,
+          "name_student": "Rafael Francisco Toribio Peña",
+          "name_admission": "2024-2 ML-MAESTRÍA EN PSICOLOGÍA FORENSE",
+          "phone": "18094405851",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 10,
+          "name_student": "Yennis de la Caridad Baster Lahera",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "19545575263",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-30"
+        }
+      },
+      {
+        "json": {
+          "id": 11,
+          "name_student": "Alfredo Emmanuel Cal y Mayor Carbajal",
+          "name_admission": "2024-2 NC-MÁSTER EN NEUROPSICOLOGÍA CLÍNICA",
+          "phone": "529611771213",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 12,
+          "name_student": "Gloria Edith Huicab Garcia",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527761205631",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-14"
+        }
+      },
+      {
+        "json": {
+          "id": 33,
+          "name_student": "Maria de los Angeles Silva Ceballos",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525612585836",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-01"
+        }
+      },
+      {
+        "json": {
+          "id": 38,
+          "name_student": "Rubén Darío Balanta Mera",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573154814425",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-01"
+        }
+      },
+      {
+        "json": {
+          "id": 42,
+          "name_student": "Eduardo Rodolfo Aguilera Ramírez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529616056137",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-01"
+        }
+      },
+      {
+        "json": {
+          "id": 43,
+          "name_student": "Danays Gonzalez",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17862742712",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-30"
+        }
+      },
+      {
+        "json": {
+          "id": 44,
+          "name_student": "Michelle Camargo De Souza Oliveira",
+          "name_admission": "2024-2 NC-MÁSTER EN NEUROPSICOLOGÍA CLÍNICA",
+          "phone": "523314111863",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 45,
+          "name_student": "María del Pilar Hernández Gómez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525561163320",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 46,
+          "name_student": "María del Rosario Silva Güenaga",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "541168340116",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-14"
+        }
+      },
+      {
+        "json": {
+          "id": 47,
+          "name_student": "Itsubis Sanchez Sotolongo",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17865323861",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 62,
+          "name_student": "Carlos Ramon Millan Anguiano",
+          "name_admission": "2024-1 LICENCIATURA EN PSICOLOGÍA",
+          "phone": "",
+          "date_start_class": "2025-02-04",
+          "date_first_payment": "2024-09-15"
+        }
+      },
+      {
+        "json": {
+          "id": 67,
+          "name_student": "Omar Alberto Ubiarco Arias",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "523312608296",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-27"
+        }
+      },
+      {
+        "json": {
+          "id": 69,
+          "name_student": "Samia Agiss Bitar",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525554042367",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-09-15"
+        }
+      },
+      {
+        "json": {
+          "id": 70,
+          "name_student": "Daniela Aracely Cruz Gomez",
+          "name_admission": "2024-2 PV-MAESTRÍA EN PSICOPEDAGOGÍA",
+          "phone": "528182002518",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 71,
+          "name_student": "Vianey María Fuentes Cabrera",
+          "name_admission": "2024-2 MS-MÁSTER EN SEXOLOGÍA CLÍNICA Y TERAPIA DE PAREJAS",
+          "phone": "524621292774",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 72,
+          "name_student": "Gabriela Lopes",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "551999173449",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-09-21"
+        }
+      },
+      {
+        "json": {
+          "id": 73,
+          "name_student": "Geraldine Pérez Contreras",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525540818547",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-09-05"
+        }
+      },
+      {
+        "json": {
+          "id": 74,
+          "name_student": "Adriana Valeria Ramírez Hernández",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "527472202574",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 75,
+          "name_student": "Jessica María Mata",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "13058424984",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 78,
+          "name_student": "María Fernanda Aguirre Ramos",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526421648517",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 79,
+          "name_student": "Cindy Michel Tamez Salazar",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "528118902654",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-09-01"
+        }
+      },
+      {
+        "json": {
+          "id": 80,
+          "name_student": "Edith Enoé Anaya Álvarez",
+          "name_admission": "2024-2 PV-MAESTRÍA EN PSICOPEDAGOGÍA",
+          "phone": "526141039389",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-31"
+        }
+      },
+      {
+        "json": {
+          "id": 81,
+          "name_student": "Julieta Alejandra Plazola Zermeño",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "523334051280",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 82,
+          "name_student": "Margarita Maya Aguilar",
+          "name_admission": "2024-2 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "528335302950",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-31"
+        }
+      },
+      {
+        "json": {
+          "id": 83,
+          "name_student": "Carolina Bernal Arellano",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525533562370",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-31"
+        }
+      },
+      {
+        "json": {
+          "id": 84,
+          "name_student": "Carmen Rosa Mosquera Osorio",
+          "name_admission": "2024-2 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "573137842407",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 85,
+          "name_student": "Norbella Jimenez Ortiz",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529993388468",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 86,
+          "name_student": "David Damián Cerda González",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "528441859955",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 87,
+          "name_student": "Yenisel Pérez Cruz",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "13053160988",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 88,
+          "name_student": "Luis Fernando Maciel Pérez",
+          "name_admission": "2024-2 NP-ESPECIALIDAD EN NEUROPSICOLOGÍA",
+          "phone": "524436456200",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 89,
+          "name_student": "Luisela López Franco",
+          "name_admission": "2024-2 AT-ESPECIALIDAD EN ATENCIÓN TEMPRANA",
+          "phone": "525536691274",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 91,
+          "name_student": "Claudia María Rubio Blanco",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526631519601",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 92,
+          "name_student": "Leonor del Carmen Vidal Morales",
+          "name_admission": "2024-2 PC - MAESTRÍA EN PSICOLOGÍA CLÍNICA Y DE LA SALUD",
+          "phone": "529932248481",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 94,
+          "name_student": "Jannette Fernandez Montelier",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17863281949",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 95,
+          "name_student": "Laura Estefanía Guillen Arrazola",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "525524970064",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 96,
+          "name_student": "Marisol Estévez",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17865867300",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 97,
+          "name_student": "Luz Armida Bodart Guzmán",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "523411056503",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 98,
+          "name_student": "Klaudia Medina",
+          "name_admission": "2024-2 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "525544417838",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 99,
+          "name_student": "Emma Paola Juárez Ortega",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "526311894339",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 100,
+          "name_student": "Jocelyn Reyes Diaz",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529511879297",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-09-15"
+        }
+      },
+      {
+        "json": {
+          "id": 101,
+          "name_student": "Fatima Patricia Pimentel Arizmendi",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526682654836",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 102,
+          "name_student": "Araceli Paula Pacheco Vásquez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529511575731",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 103,
+          "name_student": "Diana Carolina Puente García",
+          "name_admission": "2024-2 ED-MAESTRÍA EN EDUCACIÓN",
+          "phone": "524931129464",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 104,
+          "name_student": "Ovis Pérez Quintana",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17863570619",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 105,
+          "name_student": "Pamela María Beltre Peguero",
+          "name_admission": "2024-2 AU-ESPECIALIDAD EN TRASTORNOS AUTISTAS",
+          "phone": "18098627290",
+          "date_start_class": "2024-11-04",
+          "date_first_payment": "2024-12-30"
+        }
+      },
+      {
+        "json": {
+          "id": 106,
+          "name_student": "Claudia Patricia Villatoro Esquincar",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "529611845814",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 107,
+          "name_student": "María de la Luz Hurtado Mora",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524621139737",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 108,
+          "name_student": "Ivonne Álvarez Mondragón",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525540918890",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 109,
+          "name_student": "Angélica Jazmín Villa Flores",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526677984184",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 110,
+          "name_student": "Ana Paula Grandío",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526682266833",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 111,
+          "name_student": "Diana Itzel Aguilar García",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526182528025",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 112,
+          "name_student": "Marisol Anaid López Hernández",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": false,
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 113,
+          "name_student": "Vanessa Rivera Casas",
+          "name_admission": "2024-2 ML-MAESTRÍA EN PSICOLOGÍA FORENSE",
+          "phone": "526643096566",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-09-14"
+        }
+      },
+      {
+        "json": {
+          "id": 115,
+          "name_student": "Norma Banda Mendoza",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524426684398",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-14"
+        }
+      },
+      {
+        "json": {
+          "id": 116,
+          "name_student": "Anisleidy Ramírez Dupeiron",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17867401606",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 117,
+          "name_student": "Rebeca Galán Valdés",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525539690423",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-14"
+        }
+      },
+      {
+        "json": {
+          "id": 118,
+          "name_student": "Obed Alejandro Ruiz Hernández",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "528772041901",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 119,
+          "name_student": "Selene Stephania Montes Suárez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525530332459",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 120,
+          "name_student": "Marleny Rodríguez Acosta",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "18492015896",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-07-31"
+        }
+      },
+      {
+        "json": {
+          "id": 121,
+          "name_student": "José Del Carmen Peña",
+          "name_admission": "2024-2 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "",
+          "date_start_class": "2024-11-29",
+          "date_first_payment": "2024-06-18"
+        }
+      },
+      {
+        "json": {
+          "id": 125,
+          "name_student": "Maria Jose Velasquez Vega",
+          "name_admission": "2024-2 MS-MÁSTER EN SEXOLOGÍA CLÍNICA Y TERAPIA DE PAREJAS",
+          "phone": "573143562073",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-31"
+        }
+      },
+      {
+        "json": {
+          "id": 129,
+          "name_student": "María Fernanda Mora Carrillo",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-12"
+        }
+      },
+      {
+        "json": {
+          "id": 132,
+          "name_student": "Miriam Lizzet Vazquez Peralta",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527471938826",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 134,
+          "name_student": "Rosa Isela Durán Otero",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527551158393",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 135,
+          "name_student": "Sheimi Mahanayim Hernandez Jimenez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525660359019",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-03"
+        }
+      },
+      {
+        "json": {
+          "id": 136,
+          "name_student": "Ricardo Ainej Monroy Romo",
+          "name_admission": "2024-2 NC-MÁSTER EN NEUROPSICOLOGÍA CLÍNICA",
+          "phone": "19569336493",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 139,
+          "name_student": "JANE CHIMENTO",
+          "name_admission": "2024-2 ED-MAESTRÍA EN EDUCACIÓN",
+          "phone": "555499401407",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 141,
+          "name_student": "Guadalupe Ponce Ozuna",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527471011535",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-31"
+        }
+      },
+      {
+        "json": {
+          "id": 142,
+          "name_student": "Sarahí Arreguín Dimas",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524431708602",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 144,
+          "name_student": "María Natalia Zarate Devia",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573173171311",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 147,
+          "name_student": "Patricia Felix Bermudez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526188008801",
+          "date_start_class": "2024-06-03",
+          "date_first_payment": "2024-05-30"
+        }
+      },
+      {
+        "json": {
+          "id": 148,
+          "name_student": "Yulieth Marlene Leyva Velasquez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573237944756",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-30"
+        }
+      },
+      {
+        "json": {
+          "id": 149,
+          "name_student": "Yesenia Manuela Linares Trevizo",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526643295371",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-30"
+        }
+      },
+      {
+        "json": {
+          "id": 150,
+          "name_student": "Ana Flavia Monteiro",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525519060008",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-30"
+        }
+      },
+      {
+        "json": {
+          "id": 153,
+          "name_student": "Victor Adrian García Benavidez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525580311423",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-31"
+        }
+      },
+      {
+        "json": {
+          "id": 154,
+          "name_student": "Martha Alicia Gastelum Valle",
+          "name_admission": "2024-2 PV-MAESTRÍA EN PSICOPEDAGOGÍA",
+          "phone": "",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 155,
+          "name_student": "Salud Magdalena Cisneros Rivera",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524361052462",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-30"
+        }
+      },
+      {
+        "json": {
+          "id": 156,
+          "name_student": "Javier Mendoza Díaz",
+          "name_admission": "2024-2 PC - MAESTRÍA EN PSICOLOGÍA CLÍNICA Y DE LA SALUD",
+          "phone": "525520707456",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-15"
+        }
+      },
+      {
+        "json": {
+          "id": 158,
+          "name_student": "Lizeth Anahí Arriaga Padrón",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529934254931",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-19"
+        }
+      },
+      {
+        "json": {
+          "id": 159,
+          "name_student": "Julio Morales Parra",
+          "name_admission": "2024-2 IE-MÁSTER EN INTELIGENCIA EMOCIONAL",
+          "phone": "18298866318",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-25"
+        }
+      },
+      {
+        "json": {
+          "id": 160,
+          "name_student": "Arilene Yohalanith Sandoval Avila",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524774957624",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-31"
+        }
+      },
+      {
+        "json": {
+          "id": 164,
+          "name_student": "Arlette América Guizado Gómez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527331480488",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-14"
+        }
+      },
+      {
+        "json": {
+          "id": 165,
+          "name_student": "Yissel Alejandra Beberaje Bautista",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529821064329",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 166,
+          "name_student": "Diana Roxana Alvarado Rodríguez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525518741725",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-19"
+        }
+      },
+      {
+        "json": {
+          "id": 169,
+          "name_student": "Litzia Areli Gonzalez Orozco",
+          "name_admission": "2024-2 ES-MAESTRÍA EN EDUCACIÓN ESPECIAL",
+          "phone": "15053471238",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-30"
+        }
+      },
+      {
+        "json": {
+          "id": 171,
+          "name_student": "Hiran Junior Bislick Gamarra",
+          "name_admission": "2024-2 BB-MAESTRÍA EN BIG DATA Y BUSINESS INTELLIGENCE (MAESTRÍA EN INTELIGENCIA DE NEGOCIOS Y DATOS MASIVOS)",
+          "phone": "573046392312",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-14"
+        }
+      },
+      {
+        "json": {
+          "id": 175,
+          "name_student": "Hector Daniel Rivas Macias",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "528711789274",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-30"
+        }
+      },
+      {
+        "json": {
+          "id": 176,
+          "name_student": "Karla Ximena Coyotl Rangel",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525569060904",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-15"
+        }
+      },
+      {
+        "json": {
+          "id": 178,
+          "name_student": "María Jeanett González Vega",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525585772315",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 181,
+          "name_student": "Monserrat Tobaldo Ascencio",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "523521138273",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-01"
+        }
+      },
+      {
+        "json": {
+          "id": 182,
+          "name_student": "Maribel Deanda Olvera",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524151030358",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-01"
+        }
+      },
+      {
+        "json": {
+          "id": 183,
+          "name_student": "Gabriela Pedroza Nales",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524442225616",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-15"
+        }
+      },
+      {
+        "json": {
+          "id": 185,
+          "name_student": "Mireya Hernández Gómez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525583282411",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-15"
+        }
+      },
+      {
+        "json": {
+          "id": 188,
+          "name_student": "Alejandra Coutiño Tamayo",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529611769284",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-30"
+        }
+      },
+      {
+        "json": {
+          "id": 217,
+          "name_student": "Alma Regina Barrón Torres",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527228475773",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 218,
+          "name_student": "Araceli Leyva Aceves",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526141900444",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 236,
+          "name_student": "Ana Abisag García Sánchez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "522492127841",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 237,
+          "name_student": "Betty Quintana Artiz",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17864193106",
+          "date_start_class": "2024-06-05",
+          "date_first_payment": "2024-05-30"
+        }
+      },
+      {
+        "json": {
+          "id": 238,
+          "name_student": "Blanca Aurora Valencia Hernández",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525561062412",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-05-14"
+        }
+      },
+      {
+        "json": {
+          "id": 240,
+          "name_student": "Angela Patricia Torres Gómez",
+          "name_admission": "2025-1 ML-MAESTRÍA EN PSICOLOGÍA FORENSE",
+          "phone": "573505301841",
+          "date_start_class": "2025-01-20",
+          "date_first_payment": "2023-04-01"
+        }
+      },
+      {
+        "json": {
+          "id": 243,
+          "name_student": "Ana Lucía Vázquez Acosta",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "527772675854",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 244,
+          "name_student": "Betty Navarro Noguera",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "17245812411",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 253,
+          "name_student": "Alexa Ramírez Varela",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526671318768",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 254,
+          "name_student": "Bianka Esther Rodríguez Ramírez",
+          "name_admission": "2024-1 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "18496246797",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 255,
+          "name_student": "BLANCA ESTELA PACHECO CASTAÑEDA",
+          "name_admission": "2024-1 ES-MAESTRÍA EN EDUCACIÓN ESPECIAL",
+          "phone": "528121087107",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-26"
+        }
+      },
+      {
+        "json": {
+          "id": 292,
+          "name_student": "Angelica Maria Fernandez",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17863952595",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 293,
+          "name_student": "Anyer Sablón Muñoz",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "16165916944",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 303,
+          "name_student": "Cristian Francisco Gómez Solano",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573214666502",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 345,
+          "name_student": "Juan Pablo Gómez Mendoza",
+          "name_admission": "2024-2 SE-ESPECIALIDAD EN TERAPIA SEXUAL Y DE PAREJA",
+          "phone": "525548042799",
+          "date_start_class": "2025-01-20",
+          "date_first_payment": "2024-02-29"
+        }
+      },
+      {
+        "json": {
+          "id": 346,
+          "name_student": "Kleyton Fernández Callamo",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17862508338",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 348,
+          "name_student": "María Isabel Arcila Arbelaez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573209049150",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 349,
+          "name_student": "Itzel Alejandra Martínez Pérez",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "525583623767",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 350,
+          "name_student": "Ezequiel Lugano",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525586189386",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 353,
+          "name_student": "Yenni Marlen Camargo Castillo",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17864140316",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-04"
+        }
+      },
+      {
+        "json": {
+          "id": 354,
+          "name_student": "Verónica Agudelo Morales",
+          "name_admission": "2023-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573206185996",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-15"
+        }
+      },
+      {
+        "json": {
+          "id": 357,
+          "name_student": "Denis Ocaña Gómez",
+          "name_admission": "2023-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527751134954",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-14"
+        }
+      },
+      {
+        "json": {
+          "id": 358,
+          "name_student": "Monserrat Meizoso Salas",
+          "name_admission": "2023-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "52448110049933",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-02-29"
+        }
+      },
+      {
+        "json": {
+          "id": 366,
+          "name_student": "Yuri Jasbleidys Silva Ramirez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573102324225",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-06-15"
+        }
+      },
+      {
+        "json": {
+          "id": 367,
+          "name_student": "Silvia Alejandra Armenta Perpuly",
+          "name_admission": "2024-2 MI-MÁSTER EN PSICOLOGÍA CLÍNICA INFANTOJUVENIL",
+          "phone": "526121982142",
+          "date_start_class": "2024-10-21",
+          "date_first_payment": "2024-03-15"
+        }
+      },
+      {
+        "json": {
+          "id": 372,
+          "name_student": "Raul Barrios Jimenez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "522293233075",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-03-15"
+        }
+      },
+      {
+        "json": {
+          "id": 431,
+          "name_student": "Tanya Zapata Mendez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "523141483540",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-01-18"
+        }
+      },
+      {
+        "json": {
+          "id": 432,
+          "name_student": "Diana Maricela Pardo Quintero",
+          "name_admission": "2024-1 TH-MAESTRÍA EN NEUROMANAGEMENT Y GESTIÓN DEL TALENTO (NEUROGESTIÓN DEL TALENTO)",
+          "phone": "573145166789",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2023-11-30"
+        }
+      },
+      {
+        "json": {
+          "id": 461,
+          "name_student": "Yannina Margarita Navarro Murillo",
+          "name_admission": "2024-1 TH-MAESTRÍA EN NEUROMANAGEMENT Y GESTIÓN DEL TALENTO (NEUROGESTIÓN DEL TALENTO)",
+          "phone": "593984224141",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-01-30"
+        }
+      },
+      {
+        "json": {
+          "id": 465,
+          "name_student": "Laura Rut Martínez Guadarrama",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "527771356352",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2023-11-04"
+        }
+      },
+      {
+        "json": {
+          "id": 467,
+          "name_student": "Eliana Alegria Lehrer Mahfoda",
+          "name_admission": "2025-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "50769306431",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2023-12-30"
+        }
+      },
+      {
+        "json": {
+          "id": 468,
+          "name_student": "Amado Alvarez Vázquez",
+          "name_admission": "2025-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2024-01-30"
+        }
+      },
+      {
+        "json": {
+          "id": 494,
+          "name_student": "Sara Denis Angarita Arias",
+          "name_admission": "2025-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573142521069",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2023-12-30"
+        }
+      },
+      {
+        "json": {
+          "id": 545,
+          "name_student": "Miguel Alejandro Maceda Hernandez",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17864583087",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-18"
+        }
+      },
+      {
+        "json": {
+          "id": 546,
+          "name_student": "Meylis Perez Pijeira",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17866705036",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 576,
+          "name_student": "Raiane Stéfani Oliveira ",
+          "name_admission": "2024-2 ED-MAESTRÍA EN EDUCACIÓN",
+          "phone": "553584261727",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-06-17"
+        }
+      },
+      {
+        "json": {
+          "id": 578,
+          "name_student": "Nara Ethell Pérez Flores",
+          "name_admission": "2024-1 CP-MÁSTER EN PSICOONCOLOGÍA Y CUIDADOS PALIATIVOS",
+          "phone": "522295952690",
+          "date_start_class": "2024-05-06",
+          "date_first_payment": "2024-05-30"
+        }
+      },
+      {
+        "json": {
+          "id": 579,
+          "name_student": "Rogelio Fabian Elgueda Fuentes",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "56957799726",
+          "date_start_class": "2024-05-13",
+          "date_first_payment": "2024-04-27"
+        }
+      },
+      {
+        "json": {
+          "id": 580,
+          "name_student": "Yuanty Rivera Polanco",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "18092050128",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 581,
+          "name_student": "Narmi Concepción Vázquez Matias",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "522722964303",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 582,
+          "name_student": "Miguel Angel Juarez Sanchez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529933887816",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 588,
+          "name_student": "Samuel Gerardo Carrillo Macayo",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525557977250",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-16"
+        }
+      },
+      {
+        "json": {
+          "id": 604,
+          "name_student": "Sarahí Yareli Hernández Villarreal",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526644796990",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 605,
+          "name_student": "María de la Luz Hernández Salazar",
+          "name_admission": "2024-1 NC-MÁSTER EN NEUROPSICOLOGÍA CLÍNICA",
+          "phone": "529631120598",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-29"
+        }
+      },
+      {
+        "json": {
+          "id": 606,
+          "name_student": "Perla Irasema Tijerina Trujillo",
+          "name_admission": "2024-1 ES-MAESTRÍA EN EDUCACIÓN ESPECIAL",
+          "phone": "528115005763",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-26"
+        }
+      },
+      {
+        "json": {
+          "id": 607,
+          "name_student": "Silvia Alejandra Villaseñor Jáuregui",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "526642248468",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 623,
+          "name_student": "María Del Consuelo Vargas Orozco",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527711238554",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-03"
+        }
+      },
+      {
+        "json": {
+          "id": 652,
+          "name_student": "Rafael Antonio Donado Baca",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573014679388",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2022-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 656,
+          "name_student": "Melissa Abigail Báez Ávila",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526646100305",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 657,
+          "name_student": "Nancy Gutiérrez Ruiz",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "524381121981",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 661,
+          "name_student": "Olga Solange Cote Vega",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573133305701",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 668,
+          "name_student": "María Guadalupe Villaseñor Perez",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "523171043712",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 669,
+          "name_student": "Mariann Gomez Cardenas",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526862351711",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 670,
+          "name_student": "Marisol Anaid Lopez Hernandez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527122948118",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 675,
+          "name_student": "Martha Estela Castillo Morales",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529841149685",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-05-15"
+        }
+      },
+      {
+        "json": {
+          "id": 676,
+          "name_student": "Mariana Cerezo Gómez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527224238366",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-05-30"
+        }
+      },
+      {
+        "json": {
+          "id": 677,
+          "name_student": "María Cristina Hernández García",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "16195653899",
+          "date_start_class": "2024-06-03",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 678,
+          "name_student": "María Angélica Juárez Gallegos",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "19158738450",
+          "date_start_class": "2024-06-05",
+          "date_first_payment": "2024-04-26"
+        }
+      },
+      {
+        "json": {
+          "id": 679,
+          "name_student": "Marlon José Velasquez Reynoza",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "50586722951",
+          "date_start_class": "2024-05-13",
+          "date_first_payment": "2024-05-14"
+        }
+      },
+      {
+        "json": {
+          "id": 680,
+          "name_student": "Mariana Itzel Reyes Gonzalez",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17756864387",
+          "date_start_class": "2024-06-05",
+          "date_first_payment": "2024-05-01"
+        }
+      },
+      {
+        "json": {
+          "id": 688,
+          "name_student": "Maria Mariana Magaña Guzmán",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524433282229",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-15"
+        }
+      },
+      {
+        "json": {
+          "id": 701,
+          "name_student": "Laura Alejo López",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "524662131917",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 702,
+          "name_student": "Indira Cabrera Tocabens",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17864516186",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-23"
+        }
+      },
+      {
+        "json": {
+          "id": 703,
+          "name_student": "Juana Caridad Roque",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "15619146958",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-23"
+        }
+      },
+      {
+        "json": {
+          "id": 704,
+          "name_student": "Elena Gandara Gomez",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17863665004",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 705,
+          "name_student": "Marbelia García",
+          "name_admission": "2024-2 NC-MÁSTER EN NEUROPSICOLOGÍA CLÍNICA",
+          "phone": "573164050744",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 745,
+          "name_student": "Kerly Ochoa",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17863792658",
+          "date_start_class": "2024-06-03",
+          "date_first_payment": "2024-05-31"
+        }
+      },
+      {
+        "json": {
+          "id": 747,
+          "name_student": "Jesus Humberto Zarate Guzman",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "",
+          "date_start_class": "2024-05-13",
+          "date_first_payment": "2024-04-24"
+        }
+      },
+      {
+        "json": {
+          "id": 748,
+          "name_student": "Lorianel Garcia Gonzalez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "522731104433",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-05-15"
+        }
+      },
+      {
+        "json": {
+          "id": 749,
+          "name_student": "Kenia Garcia Beltran",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "19543107381",
+          "date_start_class": "2024-06-05",
+          "date_first_payment": "2024-05-15"
+        }
+      },
+      {
+        "json": {
+          "id": 750,
+          "name_student": "Ileana Romero Martínez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525545223567",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 751,
+          "name_student": "Faisuly Andrea Rodriguez Galindo",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "573202849121",
+          "date_start_class": "2024-05-13",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 752,
+          "name_student": "Joanelle Aime Alvarez Zamudio",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "527227864746",
+          "date_start_class": "2024-06-05",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 764,
+          "name_student": "Fausto Ramos Gómez",
+          "name_admission": "2024-1 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "18297152512",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 765,
+          "name_student": "Liliana Sarahí Chávez Muñiz",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "526141019966",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 787,
+          "name_student": "Levy Benjamin Mejia Medina",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "523327059272",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-30"
+        }
+      },
+      {
+        "json": {
+          "id": 799,
+          "name_student": "Leticia Rodriguez Torres",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "15612070608",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-14"
+        }
+      },
+      {
+        "json": {
+          "id": 800,
+          "name_student": "Janette Paola Reyes Martínez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "15202334808",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-03-11"
+        }
+      },
+      {
+        "json": {
+          "id": 838,
+          "name_student": "Karina Brenist Hernández",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527711013566",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 839,
+          "name_student": "Karen Jahaira Sánchez Arroba",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "593995295218",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 850,
+          "name_student": "Angel Espinoza Mora",
+          "name_admission": "2024-2 NC-MÁSTER EN NEUROPSICOLOGÍA CLÍNICA",
+          "phone": "50660531267",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-10-30"
+        }
+      },
+      {
+        "json": {
+          "id": 851,
+          "name_student": "David Castillo Solis",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524422267300",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-09-20"
+        }
+      },
+      {
+        "json": {
+          "id": 855,
+          "name_student": "Daillanis Batista Mendoza",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "13467321422",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 856,
+          "name_student": "Daniela Juvier Abraham",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17866037103",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 857,
+          "name_student": "Diana Patricia Sánchez Garcia",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573157032545",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 858,
+          "name_student": "Daniela Fernanda Ortiz Rosales",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "523313049374",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 859,
+          "name_student": "Carmen Torres Alvarado",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524431391183",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 877,
+          "name_student": "Dailidys Ivette Fernández de Castro Molina",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "17869057420",
+          "date_start_class": "2024-06-05",
+          "date_first_payment": "2024-05-14"
+        }
+      },
+      {
+        "json": {
+          "id": 879,
+          "name_student": "Dulce Mayelac Grijalva Ramirez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526622784308",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 880,
+          "name_student": "Diego Alejandro Naranjo Lopez",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "",
+          "date_start_class": "2024-05-13",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 881,
+          "name_student": "Consuelo Remedios Nieto González",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524411168350",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-05-15"
+        }
+      },
+      {
+        "json": {
+          "id": 882,
+          "name_student": "Edna Margarita Garza Salinas",
+          "name_admission": "2024-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "14236931748",
+          "date_start_class": "2024-06-05",
+          "date_first_payment": "2024-05-05"
+        }
+      },
+      {
+        "json": {
+          "id": 883,
+          "name_student": "Delia Melanie Jutkuhn Lozano",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "524141076224",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-30"
+        }
+      },
+      {
+        "json": {
+          "id": 885,
+          "name_student": "Carlos Angelo Díaz Rivera",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "14244452652",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": false
+        }
+      },
+      {
+        "json": {
+          "id": 887,
+          "name_student": "Diana Marcela Rico Lozano",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573102877976",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-04-05"
+        }
+      },
+      {
+        "json": {
+          "id": 905,
+          "name_student": "Catalina Maduro Velásquez",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "573012339888",
+          "date_start_class": "2024-04-08",
+          "date_first_payment": "2024-03-25"
+        }
+      },
+      {
+        "json": {
+          "id": 930,
+          "name_student": "Aracely Ramírez Cervantes",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "528781054893",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 931,
+          "name_student": "Alicia Gutiérrez Palomares",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525516904100",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-10-30"
+        }
+      },
+      {
+        "json": {
+          "id": 932,
+          "name_student": "Valeria Magaña Lopez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "529931067683",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-09-30"
+        }
+      },
+      {
+        "json": {
+          "id": 933,
+          "name_student": "Cindy Beatriz Rivero Torrez",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "584242703470",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 934,
+          "name_student": "Alma Alejandra Guzmán Carranza",
+          "name_admission": "2024-1 SE-ESPECIALIDAD EN TERAPIA SEXUAL Y DE PAREJA",
+          "phone": "523511250668",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-09-15"
+        }
+      },
+      {
+        "json": {
+          "id": 935,
+          "name_student": "María Guadalupe Vargas Rangel",
+          "name_admission": "2024-2 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "524432173810",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-15"
+        }
+      },
+      {
+        "json": {
+          "id": 936,
+          "name_student": "Claudia Pablos Cruz",
+          "name_admission": "2024-2 NC-MÁSTER EN NEUROPSICOLOGÍA CLÍNICA",
+          "phone": "526622052831",
+          "date_start_class": "2024-10-07",
+          "date_first_payment": "2024-09-15"
+        }
+      },
+      {
+        "json": {
+          "id": 937,
+          "name_student": "Ladys Lay Expósito González",
+          "name_admission": "2025-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "13056097520",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2024-10-14"
+        }
+      },
+      {
+        "json": {
+          "id": 942,
+          "name_student": "Guadalupe Ponce Ozuna -POOG601212M4A",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527471011535",
+          "date_start_class": "2024-08-05",
+          "date_first_payment": "2024-07-31"
+        }
+      },
+      {
+        "json": {
+          "id": 944,
+          "name_student": "IVONNE ALVAREZ MONDRAGON",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "525540918890",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      },
+      {
+        "json": {
+          "id": 945,
+          "name_student": "Edith Andrea Romero Gamez-ROGE741117CA0",
+          "name_admission": "2025-1 LP-MAESTRÍA EN PATOLOGÍAS DEL LENGUAJE Y EL HABLA",
+          "phone": "",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2024-08-01"
+        }
+      },
+      {
+        "json": {
+          "id": 947,
+          "name_student": "Gloria Edith Huicab García",
+          "name_admission": "2024-2 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "527761205631",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-10-14"
+        }
+      },
+      {
+        "json": {
+          "id": 948,
+          "name_student": "Daniela CG",
+          "name_admission": "2024-2 PV-MAESTRÍA EN PSICOPEDAGOGÍA",
+          "phone": "528182002518",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 949,
+          "name_student": "Aylen García Morales",
+          "name_admission": "2024-1 DE-DOCTORADO EN EDUCACIÓN",
+          "phone": "17867635493",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2023-09-30"
+        }
+      },
+      {
+        "json": {
+          "id": 955,
+          "name_student": "Iliana Mazón Moreno",
+          "name_admission": "2024-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "526624048419",
+          "date_start_class": "2024-03-18",
+          "date_first_payment": "2024-04-15"
+        }
+      },
+      {
+        "json": {
+          "id": 956,
+          "name_student": "Claudia Medina",
+          "name_admission": "2024-2 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "525544417838",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-30"
+        }
+      },
+      {
+        "json": {
+          "id": 963,
+          "name_student": "Crismely Bido Carpio",
+          "name_admission": "2024-1 SW-LICENCIATURA EN INGENIERIA EN DESARROLLO DE SOFTWARE",
+          "phone": "12036388220",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2025-01-30"
+        }
+      },
+      {
+        "json": {
+          "id": 965,
+          "name_student": "Melannie Odalys Castillo Torres",
+          "name_admission": "2025-1 PS-MAESTRÍA EN PSICOLOGÍA CLÍNICA",
+          "phone": "528116111387",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2024-09-30"
+        }
+      },
+      {
+        "json": {
+          "id": 966,
+          "name_student": "Lais Serrano Borroto",
+          "name_admission": "2024-1 LICENCIATURA EN PSICOLOGÍA",
+          "phone": "17868586759",
+          "date_start_class": "2025-02-04",
+          "date_first_payment": "2024-12-30"
+        }
+      },
+      {
+        "json": {
+          "id": 967,
+          "name_student": "Carmen Quintero False",
+          "name_admission": "2024-2 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "526692784534",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2025-01-27"
+        }
+      },
+      {
+        "json": {
+          "id": 968,
+          "name_student": "Carmen Quintero False",
+          "name_admission": "2024-2 AP-MÁSTER EN INTERVENCIÓN EN DIFICULTADES DEL APRENDIZAJE",
+          "phone": "526692784534",
+          "date_start_class": "2025-01-06",
+          "date_first_payment": "2025-01-31"
+        }
+      },
+      {
+        "json": {
+          "id": 971,
+          "name_student": "Jane Chimento",
+          "name_admission": "2024-2 ED-MAESTRÍA EN EDUCACIÓN",
+          "phone": "555499401407",
+          "date_start_class": "2024-09-02",
+          "date_first_payment": "2024-08-15"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2024-12-04T00:40:48.979Z",
+      "updatedAt": "2025-03-05T03:06:16.050Z",
+      "id": "Y1BsKfyyH4T8xRCR",
+      "name": "A-iallamadas"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-05T07:48:38.014Z",
+  "versionId": "a9bffb7a-a0e9-4750-9433-3dca2f574869"
+}
