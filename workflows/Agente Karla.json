@@ -1,0 +1,1795 @@
+{
+  "active": true,
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Vector Store Tool",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Tool",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(ML) Maestría Psicología Forense": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(MTTA)Máster en Psicoterapia Centrada en Trauma y Apego.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTII)Licenciatura en Ingeniería Industrial.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTCE)Licenciatura en Comercio Exterior.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(TH)Maestría Neuromanagment y gestion del talento.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(CP)Máster en Psicooncología y Cuidados Paliativos.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(MS)Master en Sexologia Clinica y Terapia de Pareja.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(IE)Máster en Inteligencia Emocional.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(DP) Maestría Dirección de proyectos.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTID)Licenciatura en Ingeniería en Desarrollo de Software.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(SE)Especialidad en terapia sexual y de pareja.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(MI)Master Psicología Clínica Infantojuvenil": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(PF) Máster en Psicoterapia Infantojuvenil.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(PV) Maestría Psicopedagogía.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTPS) Licenciatura en Psicología.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTDE) Licenciatura en Derecho.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(PO)Especialidad en Psicooncología.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(NP)Especialidad en Neuropsicología Clínica.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTCR)Licenciatura en Criminología.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTMD)Licenciatura en Mercadotecnia Digital.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTCP)Licenciatura en Contaduría publica.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(MP)Máster en Psicoterapia Cognitivo Conductual.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(AT)Especialidad en atención temprana.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Karla": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LTIE)Licenciatura en Ingeniería en Energías Renovables.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Karla",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(LP) Maestría Patologías del Lenguaje y Habla": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(PS) Maestría Psicología Clínica": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(ES) Maestría Educación Especial": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(BB) Maestría Bigdata y business intelligence": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(MBA) Maestría Administración": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(ED) Maestria en Educación": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(PC) Máster en Psicología Clínica y de la Salud": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(MN)Master neuropsicología clínica": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(AP)Master Intervención en Dificultades del Aprendizaje.": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(DE) Doctorado en Educación": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "(AU) Especialidad trastornos autista": {
+      "ai_tool": [
+        [
+          {
+            "node": "Karla",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-04T17:55:50.242Z",
+  "id": "VCqgvlfZacpKbXj0",
+  "meta": null,
+  "name": "Agente Karla",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        920,
+        -20
+      ],
+      "id": "0a741ab5-1177-4db1-badf-9b3cddc512da",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        380,
+        160
+      ],
+      "id": "e2e65650-f4e6-4f96-9923-1823213aec09",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "base_conocimiento",
+        "description": "Cualquier duda del usuario, DEBES consultar aquí. Esta función contiene información sobre: programas académicos de la Universidad ISEP, requisitos de inscripción, costos de formaciones, pausa académica y económica, gestión de pagos y morosidades, métodos de pago, títulos oficiales y convalidación, constancias de estudios, revisión y validación de solicitudes, asignación de tutores, calendario académico, procesos de evaluación, notas mínimas aprobatorias, exámenes de inglés, solución de problemas de acceso al Campus Virtual, problemas con tarjetas de pago, cómo retomar estudios tras una pausa, cambios de programa, gestión del trabajo final de máster, talleres, documentación requerida, y consultas frecuentes. Consulta esta función para cualquier duda académica, financiera o administrativa relacionada con la institución.",
+        "topK": 7
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1,
+      "position": [
+        920,
+        200
+      ],
+      "id": "05a7e069-21ba-4593-b3e3-bf1701d5d79e",
+      "name": "Vector Store Tool"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        480
+      ],
+      "id": "6ac715c9-64e0-47cb-9c75-af0ea75eb374",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        340
+      ],
+      "id": "53cd6050-d0b2-4c82-a2b0-e1fcf829d5ec",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "GdTgSVO5MkQXCIRg",
+          "name": "Universidad ISEP - Proyecto Chatbot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "mode": "id",
+          "value": "universidad_isep"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1,
+      "position": [
+        800,
+        340
+      ],
+      "id": "6e793818-02f2-49a4-bcdb-b08e089bf4b8",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "9XRFVIreOIYRz13a",
+          "name": "Universidad ISEP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.body.user_ns }}",
+        "tableName": "universidad_isep",
+        "contextWindowLength": 100
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        540,
+        180
+      ],
+      "id": "8271890a-4560-4bc2-9cdc-6107f325d975",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "AElBItifYCFjKauo",
+          "name": "Postgres Chatbot Universidad ISEP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "ML",
+        "description": "=Cuando el prospecto indique interés en la formación de psicología forense y aplique su perfil o venga con etiqueta en Especialista_Forense:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "cnjEvb7355F1bkpX",
+          "mode": "list",
+          "cachedResultName": "Especialista_Forense"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        540
+      ],
+      "id": "a36748be-3341-4eaa-95d6-eb4ec092efd4",
+      "name": "(ML) Maestría Psicología Forense"
+    },
+    {
+      "parameters": {
+        "name": "MTTA",
+        "description": "=Cuando el prospecto indique interés en la formación de Psicoterapia Centrada en Trauma y Apego y aplique su perfil o venga con etiqueta en Especialista_Trauma:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "MwrHXLfo37wwMPcv",
+          "mode": "list",
+          "cachedResultName": "Especialista_Trauma"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        1820
+      ],
+      "id": "7c376b0c-67a8-4ffe-8cf0-9dc50fdbe3ba",
+      "name": "(MTTA)Máster en Psicoterapia Centrada en Trauma y Apego."
+    },
+    {
+      "parameters": {
+        "name": "LTII",
+        "description": "=Cuando el prospecto indique interés en la formación de Ingeniería Industrial y aplique su perfil o venga con etiqueta en  Especialista_INGindustrial:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "DLbv0NnkwhZFfRLP",
+          "mode": "list",
+          "cachedResultName": "Especialista_INGindustrial"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        1340
+      ],
+      "id": "4ca19d1e-a0b2-41cd-ba13-170a09517d2a",
+      "name": "(LTII)Licenciatura en Ingeniería Industrial."
+    },
+    {
+      "parameters": {
+        "name": "LTCE",
+        "description": "=Cuando el prospecto indique interés en la formación de Comercio Exterior y aplique su perfil o venga con etiqueta en Especialista_COMExterior:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "hrMC5Rni8tI6YaON",
+          "mode": "list",
+          "cachedResultName": "Especialista_COMExterior"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        1180
+      ],
+      "id": "ef2838c7-64fd-429a-9cb3-7805240e0455",
+      "name": "(LTCE)Licenciatura en Comercio Exterior."
+    },
+    {
+      "parameters": {
+        "name": "TH",
+        "description": "=Cuando el prospecto indique interés en la formación de Neuromanagment y gestion del talento  y aplique su perfil o venga con etiqueta en Especialista_Neuromanagment:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "FQBb4JZn43VADoXa",
+          "mode": "list",
+          "cachedResultName": "Especialista_Neuromanagment"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        1020
+      ],
+      "id": "c36e550c-77c5-4ed9-b98d-2954d4f776f3",
+      "name": "(TH)Maestría Neuromanagment y gestion del talento."
+    },
+    {
+      "parameters": {
+        "name": "CP",
+        "description": "=Cuando el prospecto indique interés en la formación de Psicooncología y Cuidados Paliativos y aplique su perfil o venga con etiqueta en Especialista_Psicooncología:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "EICDMDyxgrlOIK0s",
+          "mode": "list",
+          "cachedResultName": "Especialista_Psicooncología"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        1180
+      ],
+      "id": "43837672-e36c-45bf-985b-131a3051a7de",
+      "name": "(CP)Máster en Psicooncología y Cuidados Paliativos."
+    },
+    {
+      "parameters": {
+        "name": "MS",
+        "description": "=Cuando el prospecto indique interés en la formación de Sexologia Clinica y Terapia de Pareja y aplique su perfil o venga con etiqueta en Especialista_Sexología:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "JhjfmjpDuExkBBm0",
+          "mode": "list",
+          "cachedResultName": "Especialista_Sexología"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        1660
+      ],
+      "id": "ac814117-0de4-43de-ace2-d5bc77000909",
+      "name": "(MS)Master en Sexologia Clinica y Terapia de Pareja."
+    },
+    {
+      "parameters": {
+        "name": "IE",
+        "description": "=Cuando el prospecto indique interés en la formación de Inteligencia Emocional y aplique su perfil o venga con etiqueta en Especialista_Inteligencia:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "SzVGn1423PjDhIEE",
+          "mode": "list",
+          "cachedResultName": "Especialista_Inteligencia"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        1020
+      ],
+      "id": "bbee3e88-f4c7-457e-b832-57a71dc036f3",
+      "name": "(IE)Máster en Inteligencia Emocional."
+    },
+    {
+      "parameters": {
+        "name": "DP",
+        "description": "=Cuando el prospecto indique interés en la formación de Dirección de proyectos y aplique su perfil o venga con etiqueta en Especialista_Dirección:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "ki9l1qPQLGgqF4Q4",
+          "mode": "list",
+          "cachedResultName": "Especialista_Dirección"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        1500
+      ],
+      "id": "574ac795-a388-4813-aba8-c5ba9c20da27",
+      "name": "(DP) Maestría Dirección de proyectos."
+    },
+    {
+      "parameters": {
+        "name": "LTID",
+        "description": "=Cuando el prospecto indique interés en la formación de Ingeniería en Desarrollo de Software y aplique su perfil o venga con etiqueta en Especialista_INGDesarrollo:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "1GivzmIXtliI0Du6",
+          "mode": "list",
+          "cachedResultName": "Especialista_INGDesarrollo"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        1500
+      ],
+      "id": "e9d8cbcf-e15f-4d32-b20d-bf62e42ed4ff",
+      "name": "(LTID)Licenciatura en Ingeniería en Desarrollo de Software."
+    },
+    {
+      "parameters": {
+        "name": "SE",
+        "description": "=Cuando el prospecto indique interés en la formación de terapia sexual y de pareja y aplique su perfil o venga con etiqueta enEspecialista_ESPSexual:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "cuW0MSFaWvR2S3pO",
+          "mode": "list",
+          "cachedResultName": "Especialista_ESPSexual."
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        1020
+      ],
+      "id": "61feb332-ca38-4544-b5b7-4b1f65c7d787",
+      "name": "(SE)Especialidad en terapia sexual y de pareja."
+    },
+    {
+      "parameters": {
+        "name": "MI",
+        "description": "=Cuando el prospecto indique interés en la formación de Psicología Clínica Infantojuvenil y aplique su perfil o venga con etiqueta en Especialista_PsicInfantojuvenil:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "GkLlNrX2A840jfPq",
+          "mode": "list",
+          "cachedResultName": "Especialista_PsicInfantojuvenil"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        540
+      ],
+      "id": "a82fb111-1750-4633-a243-e0662425be04",
+      "name": "(MI)Master Psicología Clínica Infantojuvenil"
+    },
+    {
+      "parameters": {
+        "name": "PF",
+        "description": "=Cuando el prospecto indique interés en la formación de Psicoterapia Infantojuvenil y aplique su perfil o venga con etiqueta en Especialista_PsicoInfantojuvenil:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "hWlpA8DyZk1sIsju",
+          "mode": "list",
+          "cachedResultName": "Especialista_Infantojuvenil"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        1500
+      ],
+      "id": "47b6bf7b-77ba-41fd-8fa0-3a5c3dfb652c",
+      "name": "(PF) Máster en Psicoterapia Infantojuvenil."
+    },
+    {
+      "parameters": {
+        "name": "PV",
+        "description": "=Cuando el prospecto indique interés en la formación de Psicopedagogía y aplique su perfil o venga con etiqueta en Especialista_Psicopedagogía:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "MYbe85pob8ZFCxh6",
+          "mode": "list",
+          "cachedResultName": "Especialista_Psicopedagogía"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        860
+      ],
+      "id": "e70b38e0-66b3-4263-8ad9-cdcde8adc0e0",
+      "name": "(PV) Maestría Psicopedagogía."
+    },
+    {
+      "parameters": {
+        "name": "LTPS",
+        "description": "=Cuando el prospecto indique interés en la formación de  Licenciatura en Psicología y aplique su perfil o venga con etiqueta en Especialista_LICPsicología:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "TKqayLuZQNJjI1Tv",
+          "mode": "list",
+          "cachedResultName": "Especialista_LICPsicología"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        380
+      ],
+      "id": "6b8d4ffd-c9b1-44be-89ea-e6b6311463d5",
+      "name": "(LTPS) Licenciatura en Psicología."
+    },
+    {
+      "parameters": {
+        "name": "LTDE",
+        "description": "=Cuando el prospecto indique interés en la formación de  Licenciatura en Derecho y aplique su perfil o venga con etiqueta en Especialista_LICDerecho:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "kx31e86eHgvenln2",
+          "mode": "list",
+          "cachedResultName": "Especialista_LICDerecho"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        700
+      ],
+      "id": "2ffefc5b-f343-4347-a524-cf795805cebf",
+      "name": "(LTDE) Licenciatura en Derecho."
+    },
+    {
+      "parameters": {
+        "name": "PO",
+        "description": "=Cuando el prospecto indique interés en la formación de  Especialidad en psicooncología y aplique su perfil o venga con etiqueta en Especialista_ESPPsicooncología:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "IpSHlzbdXrotgpsU",
+          "mode": "list",
+          "cachedResultName": "Especialista_ESPPsicooncología"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        860
+      ],
+      "id": "24c52b93-bda3-499d-bf2a-9147f341ca29",
+      "name": "(PO)Especialidad en Psicooncología."
+    },
+    {
+      "parameters": {
+        "name": "NP",
+        "description": "=Cuando el prospecto indique interés en la formación de  Especialidad en Neuropsicología y aplique su perfil o venga con etiqueta en Especialista_ESPNeuropsicología:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "dR8Co8EvZ1hb8c7N",
+          "mode": "list",
+          "cachedResultName": "Especialista_ESPNeuro"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        380
+      ],
+      "id": "6e8623b3-af27-40cb-9a3a-9343b87572d1",
+      "name": "(NP)Especialidad en Neuropsicología Clínica."
+    },
+    {
+      "parameters": {
+        "name": "LTCR",
+        "description": "=Cuando el prospecto indique interés en la formación de  Licenciatura en Criminología y aplique su perfil o venga con etiqueta enEspecialista_LICCriminología:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "WdFqJG6vTNQ2QCoT",
+          "mode": "list",
+          "cachedResultName": "Especialista_LICCriminología"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        540
+      ],
+      "id": "cd6c81b7-2065-4d29-a3b9-8fbe16807e5a",
+      "name": "(LTCR)Licenciatura en Criminología."
+    },
+    {
+      "parameters": {
+        "name": "LTMD",
+        "description": "=Cuando el prospecto indique interés en la formación de  Licenciatura en Mercadotecnia Digital y aplique su perfil o venga con etiqueta en Especialista_LICMercadotecnia:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "7fwvfBqlzIAUC0Pu",
+          "mode": "list",
+          "cachedResultName": "Especialista_LICMercadotecnia"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        860
+      ],
+      "id": "0db30714-cf56-4e04-81a0-f39d27a9ce39",
+      "name": "(LTMD)Licenciatura en Mercadotecnia Digital."
+    },
+    {
+      "parameters": {
+        "name": "LTCP",
+        "description": "=Cuando el prospecto indique interés en la formación de  Licenciatura en Contaduría publica y aplique su perfil o venga con etiqueta en Especialista_LICContaduria:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "0GHSUgKLpxD0U6Ns",
+          "mode": "list",
+          "cachedResultName": "Especialista_LICContaduria"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        1020
+      ],
+      "id": "54dc0332-4294-4793-91f6-d26fcae024ac",
+      "name": "(LTCP)Licenciatura en Contaduría publica."
+    },
+    {
+      "parameters": {
+        "name": "MP",
+        "description": "=Cuando el prospecto indique interés en la formación de Psicoterapia Cognitivo Conductual y aplique su perfil o venga con etiqueta en Especialista_PsicoCognitivo:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "yByviqeSzrvRnz4I",
+          "mode": "list",
+          "cachedResultName": "Especialista_PsicoCognitivo"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        1340
+      ],
+      "id": "500a9060-8704-4ea2-9e43-c43a1554e33d",
+      "name": "(MP)Máster en Psicoterapia Cognitivo Conductual."
+    },
+    {
+      "parameters": {
+        "name": "AT",
+        "description": "=Cuando el prospecto indique interés en la formación de Atención Temprana y aplique su perfil o venga con etiqueta en Especialista_EspATemprana:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "aGhe3Vc7GOhSqTwu",
+          "mode": "list",
+          "cachedResultName": "Especialista_EspATemprana"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        700
+      ],
+      "id": "a9e53c35-0341-4f3b-83df-4ba06db4fbb2",
+      "name": "(AT)Especialidad en atención temprana."
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Webhook').item.json.body.user }}",
+        "options": {
+          "systemMessage": "=##Objetivo de la interacción\n✔️ Debes brindar una experiencia cálida y profesional en el primer contacto con el prospecto.\n✔️Debes obtener su nombre, formación de interés y, opcionalmente, su correo.\n✔️ Lograrás generar confianza y abrir el canal de comunicación para un seguimiento efectivo\n##Tono del mensaje\n✅ Debes sonar cercana, amigable y profesional, sin ser robótica ni demasiado informal.\n✅ Usarás estratégicamente emojis 🎓📚💡🌍🤔🎓 para hacer la conversación más dinámica y natural.\n✅ Si el prospecto cuestiona si eres humana, IA o asistente virtual, debes reafirmar tu rol como asesora. Ejemplo:\n\"Jajaja, no, disculpa. Soy una asesora educativa, me llamo Karla y estoy aquí para ayudarte con todo lo que necesites. Cuéntame, ¿cómo puedo apoyarte?\"\n✅ Serás empática y proactiva, demostrando un interés genuino en el prospecto.\n✅ Debes ser directa, pero sin ser invasiva, respetando su ritmo y mostrando interés real.\n \nEjemplo de tono: \n\"¡Hola, [nombre]! 😊 Qué gusto saludarte. Soy Karla Beltrán, parte del equipo de admisiones de la Universidad ISEP. Somos una Universidad de origen europeo con más de 40 años de experiencia en educación superior, innovando con programas diseñados para adaptarse a tu vida. Cuéntame, ¿en qué programa te gustaría inscribirte? 🎓\"\n \n##Estructura del mensaje - Pasos a seguir\nPaso 1: Saludo personalizado\n🔹 Debes usar el nombre del prospecto si lo tienes.\nEjemplo:\n\"¡Hola, [nombre]! 😊 ¿Cómo estás? Qué gusto saludarte.\"\n \nPaso 2: Presentación breve\n📌 Debes presentarte con naturalidad y autoridad.\nEjemplo:\n\"Soy Karla Beltrán, asesora educativa en la Universidad ISEP, una institución con más de 40 años formando profesionales. Estamos enfocados en brindarte programas innovadores que se adapten a tu vida.\"\n \nPaso 3: Mención del interés\n🎯 Harás que el prospecto se sienta atendido mencionando su interés.\nEjemplo:\n\"Veo que estás interesado en formarte con nosotros. ¡Eso es increíble! Estudiar en ISEP puede abrirte muchas puertas. Cuéntame, ¿qué programa te gustaría conocer mejor? 🎓\"\n \nPaso 4: Pregunta clave sobre la formación de interés\n🔹 Debes obtener información sobre su programa de interés.\nEjemplo:\n\"Me encantaría ayudarte a elegir el programa ideal para ti. ¿En qué área te gustaría especializarte?\"\n \nPaso 5: Revisión del perfil académico\n📌 Debes asegurarte de que el prospecto cumple con los requisitos del programa.\n✅ Pregunta: \"¿Cuál es tu formación académica?\"\n✅ Una vez que obtengas su respuesta, debes consultar en base_conocimiento() para verificar si su perfil es apto.\n✅ Consideraciones según nivel académico:\n \nPara maestrías, el prospecto debe tener una licenciatura oficial finalizada o estar en su último año.\nPara licenciaturas, el prospecto debe haber terminado bachillerato o preparatoria con certificado.\nPara doctorados, el prospecto debe tener una maestría oficial con título.\nDebes revisar detalladamente qué licenciaturas aplican, ya que no todas son compatibles con cada programa.\nNo puedes aceptar otro nivel de estudio como sustituto del requisito mínimo del programa.\n🔹 Si el perfil es apto, continúa con la conversación resaltando los beneficios del programa.\n🔹 Si el perfil no es apto, infórmale con tacto y ayúdalo a explorar opciones viables.\n \n\n## Reglas que debes seguir SIEMPRE:\n❌ No inventes información. Solo brinda datos que estén en base_conocimiento().\n❌ No des información sobre costos, clases u otros detalles internos de la Universidad ISEP.\n✅ Debes hablar solo de lo necesario para cumplir con tu objetivo.\n✅ Puedes hablar sobre la trayectoria y ventajas de la Universidad ISEP.\n✅ Antes de recomendar un programa, debes validarlo en base_conocimiento() para nunca sugerir algo que no ofrecemos.\n \n##Contexto adicional:\n📌 Solo proporciona esta información si el prospecto pregunta directamente.\n \n📍 Ubicación de la Universidad ISEP:\nAv. Teniente Juan de la Barrera Nte. 1349, Chapultepec, 80040 Culiacán Rosales, Sin., México\n🔗 Ubicación en Google Maps\n \n⏰ Horarios de Atención Presencial:\n \nLunes a Viernes: 8 AM - 6 PM\nSábados: 8 AM - 3 PM\nDomingos: Cerrado\n📌 Si el prospecto pregunta por la diferencia entre Máster y Maestría, debes explicarlo:\n \nMáster: Programas con título propio de la Universidad ISEP.\nMaestría: Formaciones con título oficial reconocido en México y con posibilidad de convalidación internacional.\n\n##IMPORTANTE:\n📌 Antes de proporcionar información clave, debes conocer 3 aspectos fundamentales del usuario, las preguntas debes hacerlas a medida que el usuario conteste, no las debes hacer todas a la vez:\n \n1-Cómo nos conoció.\n2-Si ya estudió antes algo online.\n3-Qué le genero interés del programa.\n \n📌 Cuando un usuario exprese interés en un programa:\n\nValida en base_conocimiento() que el programa existe y está en la oferta académica de la Universidad ISEP.\nSi el perfil del usuario no aplica, informa que este programa puede no ser la mejor opción, pero no niegues la posibilidad de recibir información.\nSi su licenciatura está relacionada y está en el último año o aún no tiene título, indícale los requisitos para aplicar:\nConstancia de Estudios y Kardex.\n\n📌 Si un usuario solicita información sobre un programa inexistente:\n\nVerifica en base_conocimiento() si hay una opción similar y responde:\n\n💬 \"Mmm, en la Universidad ISEP no contamos con esa formación, pero tenemos una opción similar que podría interesarte. ¿Te gustaría conocer más detalles?\"\n\n📌 Si un usuario pregunta por el idioma de la plataforma y es de Brasil:\n\n💬 \"Como você é do Brasil, informo que a nossa plataforma estará disponível em português para facilitar a sua experiência.\"\n\n📌 Si recibes un mensaje con \"[CHMXMAE]\", ignóralo y contesta el resto del mensaje.\n \n##Resultado esperado de la interacción\n✔️ Debes perfilar correctamente al prospecto. No hay margen de error. Tienes la responsabilidad de verificar que su formación académica sea compatible con el programa de interés. Si no cumple con los requisitos, no puede avanzar.\n✔️ Harás que el prospecto se sienta atendido de manera personalizada. No puedes permitir que la conversación sea genérica o impersonal. Cada prospecto debe sentir que su situación es comprendida y valorada.\n✔️ Debes obtener información clave. Sí o sí necesitas su nombre, formación de interés y, opcionalmente, su correo. Sin estos datos, el seguimiento es ineficiente. No puedes terminar la conversación sin obtenerlos.\n✔️ Confirmarás si el prospecto cumple con los requisitos de ingreso. No asumas nada. Debes consultar en base_conocimiento(), revisar los criterios de admisión y dar una respuesta clara e inmediata.\n✔️ Crearás una conexión genuina. No puedes sonar automática ni desinteresada. Si el prospecto no siente que realmente te importa su futuro, se pierde la oportunidad de conversión.\n\n\n- Estas son las etiquetas del prospecto:\n\"Formación\": \"{{ $json.body.formacion }}\"\n- Cuando el prospecto indique interés en la formación de patologías del lenguaje y del habla o terapia del lenguaje y aplique su perfil, llama a la función LP().\n- Cuando el prospecto indique interés en la formación de psicología clínica y aplique su perfil, llama a la función PS().\n- Cuando el prospecto indique interés en la formación de psicología forense y aplique su perfil, llama a la función ML().\n- Cuando el prospecto indique interés en la formación de Educación Especial y aplique su perfil, llama a la función ES().\n- Cuando el prospecto indique interés en la formación de Psicopedagogía y aplique su perfil, llama a la función PV().\n- Cuando el prospecto indique interés en la formación de Neuromanagment y gestion del talento  y aplique su perfil, llama a la función TH().\n- Cuando el prospecto indique interés en la formación de Bigdata y business intelligence\t y aplique su perfil, llama a la función BB().\n- Cuando el prospecto indique interés en la formación de administración y aplique su perfil, llama a la función MBA().\n- Cuando el prospecto indique interés en la formación de Dirección de proyectos y aplique su perfil, llama a la función DP().\n- Cuando el prospecto indique interés en la formación de Educación y aplique su perfil, llama a la función ED().\n- Cuando el prospecto indique interés en la formación de Psicología Clínica y de la Salud y aplique su perfil, llama a la función PC().\n- Cuando el prospecto indique interés en la formación de Psicología Clínica Infantojuvenil y aplique su perfil, llama a la función MI().\n- Cuando el prospecto indique interés en la formación de neuropsicología clínica y aplique su perfil, llama a la función MN(). \n- Cuando el prospecto indique interés en la formación de Intervención en Dificultades del Aprendizaje y aplique su perfil, llama la función AP().\n- Cuando el prospecto indique interés en la formación de Inteligencia Emocional y aplique su perfil, llama a la función IE().\n- Cuando el prospecto indique interés en la formación de Psicooncología y Cuidados Paliativos y aplique su perfil, llama a la función CP().\n- Cuando el prospecto indique interés en la formación de Psicoterapia Cognitivo Conductual y aplique su perfil, llama a la función MP().\n- Cuando el prospecto indique interés en la formación de Psicoterapia Infantojuvenil y aplique su perfil, llama a la función PF(). \n- Cuando el prospecto indique interés en la formación de Sexologia Clinica y Terapia de Pareja y aplique su perfil, llama a la función MS(). \n- Cuando el prospecto indique interés en la formación de Psicoterapia Centrada en Trauma y Apego y aplique su perfil, llama a la función MTTA().\n- Cuando el prospecto indique interés en la formación de  Doctorado en educación y aplique su perfil, llama a la función DE().\n- Cuando el prospecto indique interés en la formación de  Especialidad en Neuropsicología y aplique su perfil, llama a la función NP(). \n- Cuando el prospecto indique interés en la formación de  Especialidad  trastornos autista\t y aplique su perfil, llama a la función AU(). \n- Cuando el prospecto indique interés en la formación de Atención Temprana y aplique su perfil, llama a la función AT().\n- Cuando el prospecto indique interés en la formación de  Especialidad en psicooncología y aplique su perfil, llama a la función PO(). \n- Cuando el prospecto indique interés en la formación de terapia sexual y de pareja y aplique su perfil, llama a la función SE(). \n- Cuando el prospecto indique interés en la formación de  Licenciatura en Psicología y aplique su perfil, llama a la función LTPS().\n- Cuando el prospecto indique interés en la formación de  Licenciatura en Criminología y aplique su perfil, llama a la función LTCR().\n- Cuando el prospecto indique interés en la formación de  Licenciatura en Derecho y aplique su perfil, llama a la función LTDE().\n- Cuando el prospecto indique interés en la formación de  Licenciatura en Mercadotecnia Digital y aplique su perfil, llama a la función LTMD().\n- Cuando el prospecto indique interés en la formación de  Licenciatura en Contaduría publica y aplique su perfil, llama a la función LTCP().\n- Cuando el prospecto indique interés en la formación de Comercio Exterior y aplique su perfil, llama a la función LTCE(). \n- Cuando el prospecto indique interés en la formación de Ingeniería Industrial y aplique su perfil, llama a la función LTII(). \n- Cuando el prospecto indique interés en la formación de Ingeniería en Desarrollo de Software y aplique su perfil, llama a la función LTID().\n- Cuando el prospecto indique interés en la formación de Ingeniería en Energías Renovables y aplique su perfil, llama a la función LTIE(). \n\n\nLa fecha y hora de hoy es: {{ $now }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        520,
+        -20
+      ],
+      "id": "636f2cec-7d5d-4662-be85-d66f3f2771d5",
+      "name": "Karla"
+    },
+    {
+      "parameters": {
+        "name": "LTIE",
+        "description": "=Cuando el prospecto indique interés en la formación de Ingeniería en Energías Renovables y aplique su perfil o venga con etiqueta en Especialista_INGEnergías:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "M9w6YchUmnlJgKSW",
+          "mode": "list",
+          "cachedResultName": "Especialista_INGEnergías"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        1660
+      ],
+      "id": "766f182b-0dbc-4f3a-953c-c317a00005a5",
+      "name": "(LTIE)Licenciatura en Ingeniería en Energías Renovables."
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "7a7329a6-d41c-4af5-b895-c1cf5910d3de",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        220,
+        -20
+      ],
+      "id": "fb52cf94-64a2-49e3-b1f0-27fa39e31aeb",
+      "name": "Webhook",
+      "webhookId": "7a7329a6-d41c-4af5-b895-c1cf5910d3de"
+    },
+    {
+      "parameters": {
+        "name": "LP",
+        "description": "=Cuando el prospecto indique interés en la formación de patologías del lenguaje y del habla o terapia del lenguaje y aplique su perfil O venga con etiqueta en Especialista_Lenguaje\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "9jsKWpGx8BdLAklh",
+          "mode": "list",
+          "cachedResultName": "Especialista_Lenguaje"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        1660
+      ],
+      "id": "c94a890a-c351-402a-9f0e-f68060891e74",
+      "name": "(LP) Maestría Patologías del Lenguaje y Habla"
+    },
+    {
+      "parameters": {
+        "name": "PS",
+        "description": "=Cuando el prospecto indique interés o pida información sobre la formación o maestría de psicología clinica y aplique su perfil\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "0wdaHMTpaUScEga9",
+          "mode": "list",
+          "cachedResultName": "Especialista_PS"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        380
+      ],
+      "id": "91f84135-1848-454f-900d-74da44a67577",
+      "name": "(PS) Maestría Psicología Clínica"
+    },
+    {
+      "parameters": {
+        "name": "ES",
+        "description": "=Cuando el prospecto indique interés en la formación de Educación Especial y aplique su perfil o venga con etiqueta Especialista_EDEspecial:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "4klw212Ud4hTF3zn",
+          "mode": "list",
+          "cachedResultName": "Especialista_EDEspecial"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        700
+      ],
+      "id": "8c5fed50-d7fa-49c5-8cbf-d4f86f76fee3",
+      "name": "(ES) Maestría Educación Especial"
+    },
+    {
+      "parameters": {
+        "name": "BB",
+        "description": "=Cuando el prospecto indique interés en la formación de Bigdata y business intelligence\t y aplique su perfil o venga con etiqueta en Especialista_BData:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "zNnOX0S2m6PyOkhv",
+          "mode": "list",
+          "cachedResultName": "Especialista_BData"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        1180
+      ],
+      "id": "180f63cd-7ef9-483c-96a8-d6059a6171f0",
+      "name": "(BB) Maestría Bigdata y business intelligence"
+    },
+    {
+      "parameters": {
+        "name": "MBA",
+        "description": "=Cuando el prospecto indique interés en la formación de administración y aplique su perfil o venga con etiqueta en Especialista_Administración\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "WbAdiRDUOF6GieSB",
+          "mode": "list",
+          "cachedResultName": "Especialista_Administración"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        1340
+      ],
+      "id": "4c5ba7d5-546e-4677-97fc-25d0c4cf844b",
+      "name": "(MBA) Maestría Administración"
+    },
+    {
+      "parameters": {
+        "name": "ED",
+        "description": "=Cuando el prospecto indique interés en la formación de Educación y aplique su perfil o venga con etiqueta en Especialista_Educación:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "DEqYRSpAkFHw9c2t",
+          "mode": "list",
+          "cachedResultName": "Especialista_Educación"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        1820
+      ],
+      "id": "f0286ae1-c4fd-4282-aaf1-98f4aaf5a80e",
+      "name": "(ED) Maestria en Educación"
+    },
+    {
+      "parameters": {
+        "name": "PC",
+        "description": "=Cuando el prospecto indique interés en la formación de Psicología Clínica y de la Salud y aplique su perfil o venga con etiqueta en Especialista_PsiClinica:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "BH2pXkjGhnBgtHuW",
+          "mode": "list",
+          "cachedResultName": "Especialista_PsiClinica"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        380
+      ],
+      "id": "66612646-ac68-4b4b-9e81-58c0e7ba816b",
+      "name": "(PC) Máster en Psicología Clínica y de la Salud"
+    },
+    {
+      "parameters": {
+        "name": "MN",
+        "description": "=Cuando el prospecto indique interés en la formación de neuropsicología clínica y aplique su perfil o venga con etiqueta en Especialista_Neuropsicología:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "HP8A2lHnw60rw9qf",
+          "mode": "list",
+          "cachedResultName": "Especialista_Neuropsicología"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        700
+      ],
+      "id": "0c3b0359-1ba3-4024-9016-a2c6d605207a",
+      "name": "(MN)Master neuropsicología clínica"
+    },
+    {
+      "parameters": {
+        "name": "AP",
+        "description": "=Cuando el prospecto indique interés en la formación de Intervención en Dificultades del Aprendizaje y aplique su perfil o venga con etiqueta en Especialista_Intervención:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "BByWubXYjRcNXtXe",
+          "mode": "list",
+          "cachedResultName": "Especialista_Intervención"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -200,
+        860
+      ],
+      "id": "6a553312-2592-41d5-b241-6bde85aaaf11",
+      "name": "(AP)Master Intervención en Dificultades del Aprendizaje."
+    },
+    {
+      "parameters": {
+        "name": "DE",
+        "description": "=Cuando el prospecto indique interés en la formación de  Doctorado en educación y aplique su perfil o venga con etiqueta en Especialista_DOCEducación:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "Ge9gRh5VNhDvyeDP",
+          "mode": "list",
+          "cachedResultName": "Especialista_DOCEducación"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        380
+      ],
+      "id": "7034323e-90a9-4a1e-a7c7-d8e7b3e88e66",
+      "name": "(DE) Doctorado en Educación"
+    },
+    {
+      "parameters": {
+        "name": "AU",
+        "description": "=Cuando el prospecto indique interés en la formación de  Especialidad  trastornos autista\t y aplique su perfil o venga con etiqueta en Especialista_ESPTrastornos:\n\nEtiqueta: {{ $('Webhook').item.json.body.formacion }}",
+        "workflowId": {
+          "__rl": true,
+          "value": "0b8FPWDiVv0I40BH",
+          "mode": "list",
+          "cachedResultName": "Especialista_ESPTrastornos"
+        },
+        "fields": {
+          "values": [
+            {
+              "name": "user_ns",
+              "stringValue": "={{ $('Webhook').item.json.body.user_ns }}"
+            },
+            {
+              "name": "user",
+              "stringValue": "={{ $('Webhook').item.json.body.user }}"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        540
+      ],
+      "id": "5664d436-b255-4316-8169-1ed584062fdb",
+      "name": "(AU) Especialidad trastornos autista"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-11T21:58:52.073Z",
+      "updatedAt": "2025-02-11T21:58:52.073Z",
+      "id": "NYlUEFJCjAa2X4yf",
+      "name": "chatbot"
+    },
+    {
+      "createdAt": "2025-02-20T20:11:19.525Z",
+      "updatedAt": "2025-02-20T20:11:19.525Z",
+      "id": "PeoIz6bFcQwZKWNt",
+      "name": "PRUEBA"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-06T17:43:01.576Z",
+  "versionId": "f6c9fd46-83fe-432b-a3ac-8bce788e37f6"
+}
